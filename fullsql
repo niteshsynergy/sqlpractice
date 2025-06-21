@@ -1,0 +1,2407 @@
+SQL Basics and Database Concepts
+
+What is SQL?
+
+SQL (Structured Query Language) is a standard programming language used to manage and manipulate relational databases. SQL enables you to create, retrieve, update, and delete data from databases.
+
+Key Concepts in SQL
+
+Database
+
+A database is a collection of organized data, typically stored in tables, that can be easily accessed, managed, and updated.
+
+Table
+
+A table is a collection of related data stored in rows and columns. Each table is identified by a name, and each row in the table is a record containing data.
+
+Record
+
+A record is a row in a table, containing specific data for the columns (fields) in that table. For example, in the Customers table, each row represents a customer, with columns for CustomerID, CustomerName, ContactName, Address, etc.
+
+Column
+
+A column is a field in a table that holds a specific type of data (e.g., name, address, age).
+
+
+
+Some of The Most Important SQL Commands
+
+SELECT - extracts data from a database
+
+UPDATE - updates data in a database
+
+DELETE - deletes data from a database
+
+INSERT INTO - inserts new data into a database
+
+CREATE DATABASE - creates a new database
+
+ALTER DATABASE - modifies a database
+
+CREATE TABLE - creates a new table
+
+ALTER TABLE - modifies a table
+
+DROP TABLE - deletes a table
+
+CREATE INDEX - creates an index (search key)
+
+DROP INDEX - deletes an index
+
+
+ 
+
+-- Step 1: Select the database
+USE niteshsynergy;
+
+-- Step 2: Create the Customers table
+CREATE TABLE IF NOT EXISTS Customers (
+   CustomerID INT PRIMARY KEY,
+   CustomerName VARCHAR(100),
+   ContactName VARCHAR(100),
+   Address VARCHAR(150),
+   City VARCHAR(50),
+   PostalCode VARCHAR(20),
+   Country VARCHAR(50)
+);
+
+-- Step 3: Insert the data
+INSERT INTO Customers (CustomerID, CustomerName, ContactName, Address, City, PostalCode, Country)
+VALUES
+   (1, 'Alfreds Futterkiste', 'Maria Anders', 'Obere Str. 57', 'Berlin', '12209', 'Germany'),
+   (2, 'Ana Trujillo Emparedados y helados', 'Ana Trujillo', 'Avda. de la Constitución 2222', 'México D.F.', '05021', 'Mexico'),
+   (3, 'Antonio Moreno Taquería', 'Antonio Moreno', 'Mataderos 2312', 'México D.F.', '05023', 'Mexico'),
+   (4, 'Around the Horn', 'Thomas Hardy', '120 Hanover Sq.', 'London', 'WA1 1DP', 'UK'),
+   (5, 'Berglunds snabbköp', 'Christina Berglund', 'Berguvsvägen 8', 'Luleå', 'S-958 22', 'Sweden');
+ 
+to get the distinct count of countries from the Customers table is:
+ select count(distinct country) from customers;
+
+Select all customers with a CustomerID greater than 80:
+
+SELECT * FROM Customers    
+WHERE CustomerID > 80 ;    
+
+Here’s a detailed explanation of each operator that can be used in the WHERE clause with examples:
+
+1. = (Equal)
+
+The = operator is used to filter records that exactly match a specified value.
+
+Example:
+
+sql
+
+SELECT * FROM Customers WHERE Country = 'Germany';
+
+This will return all customers whose Country is exactly 'Germany'.
+
+
+
+2. > (Greater than)
+
+The > operator is used to find records where the value in a column is greater than the specified value.
+
+Example:
+
+sql
+
+SELECT * FROM Customers WHERE CustomerID > 3;
+
+This will return all customers with CustomerID greater than 3.
+
+
+
+3. < (Less than)
+
+The < operator is used to find records where the value in a column is less than the specified value.
+
+Example:
+
+sql
+
+SELECT * FROM Customers WHERE CustomerID < 3;
+
+This will return all customers with CustomerID less than 3.
+
+
+
+4. >= (Greater than or equal)
+
+The >= operator is used to find records where the value in a column is greater than or equal to a specified value.
+
+Example:
+
+sql
+
+SELECT * FROM Customers WHERE CustomerID >= 3;
+
+This will return all customers with CustomerID greater than or equal to 3.
+
+
+
+5. <= (Less than or equal)
+
+The <= operator is used to find records where the value in a column is less than or equal to a specified value.
+
+Example:
+
+sql
+
+SELECT * FROM Customers WHERE PostalCode <= '05021';
+
+This will return all customers with PostalCode less than or equal to '05021'.
+
+
+
+6. <> or != (Not equal)
+
+The <> (or != in some databases) operator is used to find records where the value in a column is not equal to the specified value.
+
+Example:
+
+sql
+
+SELECT * FROM Customers WHERE Country <> 'Germany';
+
+This will return all customers whose Country is not 'Germany'.
+
+
+
+7. BETWEEN (Between a certain range)
+
+The BETWEEN operator is used to find records where a column’s value falls within a specified range (inclusive).
+
+Example:
+
+sql
+
+SELECT * FROM Customers WHERE CustomerID BETWEEN 3 AND 5;
+
+This will return all customers with CustomerID values between 3 and 5 (inclusive).
+
+
+
+8. LIKE (Search for a pattern)
+
+The LIKE operator is used to search for a pattern in a column. It often works with wildcard characters:
+
+% represents zero or more characters.
+
+_ represents exactly one character.
+
+Example:
+
+Example with _:
+
+sql
+
+SELECT * FROM Customers WHERE CustomerName LIKE 'A%';
+
+This will return all customers whose CustomerName starts with 'A'.
+
+sql
+
+SELECT * FROM Customers WHERE CustomerName LIKE '_r%';
+
+This will return all customers whose CustomerName has 'r' as the second letter.
+
+
+
+9. IN (To specify multiple possible values for a column)
+
+The IN operator is used to specify a list of possible values for a column.
+
+Example:
+
+sql
+
+SELECT * FROM Customers WHERE Country IN ('Germany', 'Mexico', 'Sweden');
+
+This will return all customers whose Country is either 'Germany', 'Mexico', or 'Sweden'.
+
+
+
+Summary
+
+=: Exact match of a value.
+
+>: Greater than.
+
+<: Less than.
+
+>=: Greater than or equal to.
+
+<=: Less than or equal to.
+
+<> or !=: Not equal.
+
+BETWEEN: A range of values.
+
+LIKE: Pattern matching with wildcards.
+
+IN: Multiple possible values.
+
+
+The SQL ORDER BY
+
+The ORDER BY keyword is used to sort the result-set in ascending or descending order.
+SELECT * FROM Products    
+ORDER BY Price;    
+
+SELECT * FROM Products    
+ORDER BY Price DESC ;    
+
+select * from products order by price asc, ProductName desc;    
+
+select * from customers where country='Mexico' and customerName like 'a%';    
+
+
+1. Fetching the nth record from the top:
+
+
+For nth record from the top (generalized):
+
+For MySQL and PostgreSQL (which supports LIMIT and OFFSET): sql Copy code
+
+SELECT * FROM Products
+ORDER BY ProductID
+LIMIT 1 OFFSET n-1;
+
+For Oracle (which does not support LIMIT and OFFSET, but uses ROWNUM or FETCH):
+
+SELECT * FROM (
+   SELECT * FROM Products
+   ORDER BY ProductID
+)
+WHERE ROWNUM = n;
+
+Replace n with the desired record number.
+
+Note: Alternatively, for Oracle 12c and above (with FETCH):
+
+SELECT * FROM Products
+ORDER BY ProductID
+FETCH NEXT 1 ROWS ONLY OFFSET n-1 ROWS;
+
+
+
+For nth record from the bottom (generalized):
+
+
+For MySQL and PostgreSQL:
+
+SELECT * FROM Products
+ORDER BY ProductID DESC
+LIMIT 1 OFFSET n-1;
+
+For Oracle: Using a subquery to reverse the order (same as for fetching from the top, but with DESC order):
+
+SELECT * FROM (
+   SELECT * FROM Products
+   ORDER BY ProductID DESC
+)
+WHERE ROWNUM = n;
+
+Note:Alternatively, for Oracle 12c and above (with FETCH):
+SELECT * FROM Products
+ORDER BY ProductID DESC
+FETCH NEXT 1 ROWS ONLY OFFSET n-1 ROWS;
+ 
+
+
+
+FETCH FIRST
+SELECT * FROM Customers    
+FETCH FIRST 3 ROWS ONLY;    
+
+ 
+
+SELECT TOP 50 PERCENT * FROM Customers;    
+
+SELECT * FROM Customers    
+FETCH FIRST 50 PERCENT ROWS ONLY;    
+ 
+
+
+
+
+
+→
+
+SQL Sub Languages in every database
+
+1. Data Definition Language (DDL)
+
+DDL is used to define and manage database structures such as tables, schemas, and indexes. These commands modify the structure of the database.
+
+Common DDL Commands:
+
+CREATE: Used to create a new table, database, index, or other objects.
+
+CREATE TABLE employees (
+   id INT PRIMARY KEY,
+   name VARCHAR(100),
+   age INT
+);
+ 
+
+ALTER: Modifies an existing database object, such as adding, deleting, or modifying columns in a table.
+
+
+
+ALTER TABLE employees ADD COLUMN email VARCHAR(100);
+ 
+
+DROP: Deletes an existing database object (e.g., table, view).
+
+DROP TABLE employees;
+ 
+
+TRUNCATE: Removes all rows from a table, but retains the table structure for future use.
+
+
+
+TRUNCATE TABLE employees;
+ 
+
+RENAME (Oracle 9i): Used to rename an existing database object such as a table or column.
+
+RENAME employees TO staff;
+ 
+
+
+
+2. Data Manipulation Language (DML)
+
+DML is used to manipulate data in existing tables. These commands deal with the insertion, update, deletion, and merging of data.
+
+Common DML Commands:
+
+INSERT: Adds new records to a table.
+
+INSERT INTO employees (id, name, age) VALUES (1, 'John Doe', 30);
+ 
+
+UPDATE: Modifies existing records in a table.
+
+UPDATE employees SET age = 31 WHERE id = 1;
+ 
+
+DELETE: Removes records from a table.
+
+DELETE FROM employees WHERE id = 1;
+ 
+
+MERGE (Oracle 9i): A combination of INSERT, UPDATE, and DELETE used to merge data into a table. It's often used for upserting (inserting or updating).
+
+MERGE INTO employees e
+USING new_employees ne
+ON (e.id = ne.id)
+WHEN MATCHED THEN
+   UPDATE SET e.name = ne.name, e.age = ne.age
+WHEN NOT MATCHED THEN
+   INSERT (id, name, age) VALUES (ne.id, ne.name, ne.age);
+ 
+
+
+
+3. Data Retrieval Language (DRL) / Data Query Language (DQL)
+
+DQL is used for querying the database to retrieve data. The most common command is SELECT.
+
+Common DQL Command:
+
+SELECT: Retrieves data from one or more tables based on the given criteria.
+
+SELECT name, age FROM employees WHERE age > 30;
+ 
+
+
+
+4. Transaction Control Language (TCL)
+
+TCL is used to manage transactions in the database. These commands ensure that all the operations within a transaction are completed successfully or rolled back if there’s an error, maintaining data consistency.
+
+Common TCL Commands:
+
+COMMIT: Commits a transaction, making all changes permanent.
+
+COMMIT;
+ 
+
+ROLLBACK: Rolls back the current transaction, undoing any changes made.
+
+ROLLBACK;
+ 
+
+SAVEPOINT: Sets a savepoint within a transaction to which you can later roll back if needed.
+
+SAVEPOINT savepoint_name;
+ 
+
+5. Data Control Language (DCL)
+
+DCL is used to control access to data and database objects. These commands manage user permissions.
+
+Common DCL Commands:
+
+GRANT: Gives a user or role specific privileges to perform actions on a database object.
+
+GRANT SELECT, INSERT ON employees TO user1;
+ 
+
+REVOKE: Removes a user's privileges to perform certain actions on a database object.
+
+
+
+REVOKE INSERT ON employees FROM user1;
+ 
+
+
+
+The ACID properties:
+
+
+
+The ACID properties (Atomicity, Consistency, Isolation, Durability) are fundamental principles in database management systems (DBMS) to ensure that transactions are processed reliably. Here's a real-time example for each property, along with a use case:
+
+1. Atomicity (ROLLBACK)
+
+Definition: A transaction is treated as a single unit, which either fully succeeds or fully fails. If a transaction fails at any point, all changes made during the transaction are rolled back, ensuring the database remains in a consistent state.
+
+Use Case: Banking Transfer
+
+Imagine you are transferring money from one account to another. The transaction involves two steps:Deduct the amount from the sender’s account.
+
+Add the amount to the recipient’s account.
+
+If the second step fails after the deduction, the first step (deducting from the sender’s account) should be rolled back to ensure no money is lost.
+
+Example: The transaction begins, but the bank's system crashes before the recipient’s account is credited. The system automatically rolls back the transaction to ensure the sender's account is restored.
+
+2. Consistency
+
+Definition: A transaction brings the database from one valid state to another, ensuring that the database constraints, rules, and integrity are maintained before and after the transaction.
+
+Use Case: E-Commerce Inventory ManagementWhen a customer places an order on an e-commerce platform, the system must ensure that the quantity of the item purchased is updated correctly in the database.
+
+Example: If a customer buys the last 3 units of a product, the system checks that the inventory count is updated to reflect this after the transaction. If the transaction completes, the database will not allow a negative stock quantity or allow more items to be sold than available.
+
+3. Isolation
+
+Definition: Transactions are executed in isolation from one another, meaning the intermediate state of one transaction is not visible to other transactions. This ensures that transactions do not interfere with each other.
+
+Use Case: Online Reservation SystemWhen two users are booking the last available seat on a flight, the system ensures that they do not both "see" the seat as available at the same time.
+
+Example: User 1 begins the booking process, and before the transaction is complete, User 2 tries to book the same seat. The system isolates the two transactions to ensure that only one user can successfully complete the booking while the other will receive an error stating that the seat is no longer available.
+
+4. Durability (COMMIT)
+
+Definition: Once a transaction has been committed, the changes are permanent, even in the event of a system crash. The database ensures that all changes made by the transaction are saved and will persist.
+
+Use Case: Order Processing SystemOnce a customer places an order, the system confirms the order and records it in the database. After the order is confirmed, no matter what happens (e.g., power failure), the order data is saved.
+
+Example: A customer successfully places an order for a product, and the system commits the transaction. If the server crashes immediately afterward, the order is still intact and retrievable when the system comes back online.
+
+In summary:
+
+Atomicity ensures that transactions are all-or-nothing.
+
+Consistency guarantees that the database remains in a valid state.
+
+Isolation makes sure transactions do not interfere with each other.
+
+Durability ensures that committed transactions are permanent.
+
+These properties are crucial for ensuring reliable and correct database transactions in systems like banking, e-commerce, reservation platforms, and more.
+
+
+
+Here’s how you can achieve each of the ACID properties in Java with examples for each:
+
+
+
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+@Service
+public class BankService {
+
+   private final AccountRepository accountRepository;
+
+   public BankService(AccountRepository accountRepository) {
+       this.accountRepository = accountRepository;
+   }
+
+   @Transactional
+   public void transferFunds(Long senderId, Long receiverId, double amount) {
+       // Deduct from sender's account
+       Account sender = accountRepository.findById(senderId).orElseThrow(() -> new RuntimeException("Sender not found"));
+       sender.setBalance(sender.getBalance() - amount);
+       accountRepository.save(sender);
+
+       // Simulate an error: Uncomment the line below to trigger rollback
+       if (amount > 1000) throw new RuntimeException("Simulated error");
+
+       // Add to receiver's account
+       Account receiver = accountRepository.findById(receiverId).orElseThrow(() -> new RuntimeException("Receiver not found"));
+       receiver.setBalance(receiver.getBalance() + amount);
+       accountRepository.save(receiver);
+   }
+}
+ 
+
+@Transactional ensures that if an exception occurs, the whole transaction will be rolled back, ensuring atomicity.
+
+
+
+2. Consistency
+
+Consistency ensures that the database constraints and business logic are always maintained.
+
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+@Service
+public class InventoryService {
+
+   private final ProductRepository productRepository;
+
+   public InventoryService(ProductRepository productRepository) {
+       this.productRepository = productRepository;
+   }
+
+   @Transactional
+   public void purchaseProduct(Long productId, int quantity) {
+       Product product = productRepository.findById(productId)
+               .orElseThrow(() -> new RuntimeException("Product not found"));
+
+       if (product.getStock() < quantity) {
+           throw new RuntimeException("Insufficient stock available");
+       }
+
+       product.setStock(product.getStock() - quantity);
+       productRepository.save(product);
+   }
+}
+ 
+
+The purchaseProduct method ensures that if there is insufficient stock, a runtime exception is thrown, maintaining consistency. The @Transactional annotation will ensure that any operation is atomic and consistent.
+
+
+
+3. Isolation
+
+Isolation ensures that one transaction is not affected by another transaction, which is critical in multi-user environments.
+
+Example: Isolation with Spring Boot
+
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+@Service
+public class ReservationService {
+
+   private final ReservationRepository reservationRepository;
+
+   public ReservationService(ReservationRepository reservationRepository) {
+       this.reservationRepository = reservationRepository;
+   }
+
+   @Transactional
+   public void bookSeat(Long seatId, Long customerId) {
+       // Fetch seat and customer details
+       Seat seat = reservationRepository.findSeatById(seatId);
+       if (seat.isBooked()) {
+           throw new RuntimeException("Seat is already booked");
+       }
+       
+       seat.setBooked(true);
+       reservationRepository.save(seat);
+       
+       // Log customer booking
+       reservationRepository.saveBookingLog(customerId, seatId);
+   }
+}
+@Transactional ensures that while the seat is being booked, the operation is isolated from other transactions that might also be booking seats simultaneously.
+
+
+
+4. Durability (COMMIT)
+
+Once a transaction is committed, it should be saved permanently in the database even if the system crashes afterward.
+
+Example: Durability with Spring Boot
+
+
+
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+@Service
+public class OrderService {
+
+   private final OrderRepository orderRepository;
+
+   public OrderService(OrderRepository orderRepository) {
+       this.orderRepository = orderRepository;
+   }
+
+   @Transactional
+   public void placeOrder(Long customerId, List<Long> productIds) {
+       // Place the order and save to database
+       Order order = new Order();
+       order.setCustomerId(customerId);
+       order.setProductIds(productIds);
+       order.setStatus("PLACED");
+       
+       orderRepository.save(order);
+       
+       // After the commit, this data should persist even if the system crashes
+   }
+}
+ 
+
+With @Transactional, the changes made to the database will persist even if the system crashes after the commit. Once the transaction is committed, it’s durable.
+
+
+
+Key Notes:
+
+Atomicity is achieved by ensuring the transaction is all or nothing.
+
+Consistency ensures the database's rules and integrity are respected.
+
+Isolation is managed through transactions to avoid conflicts between concurrent transactions.
+
+Durability ensures that once committed, the data persists even after crashes, which can be implemented by using JPA or Spring Data repositories.
+
+In real-time enterprise applications, these concepts are implemented using frameworks like Spring Transaction Management or JDBC (for lower-level control), making the system robust and reliable.
+
+
+
+
+
+
+
+SQL Aggregate Functions
+ 
+
+Common ones:
+
+MIN() – smallest value in a column
+
+MAX() – largest value
+
+COUNT() – total rows
+
+SUM() – total of numeric values
+
+AVG() – average of numeric values
+
+Ignore NULL values (except COUNT(*)). 
+
+Syntax:
+SELECT 
+  MIN(col), MAX(col), COUNT(*), SUM(num_col), AVG(num_col)
+FROM table_name;
+
+Eg-
+Facebook‑style use case:
+– Count posts per user:
+
+SELECT user_id, COUNT(*) AS total_posts
+FROM posts
+GROUP BY user_id;
+
+– Average friends per user:
+
+SELECT user_id, AVG(friend_count) AS avg_friends
+FROM users
+GROUP BY user_id;
+
+2. GROUP BY
+Concept:
+
+Splits rows into groups by one or more columns.
+
+Typically paired with aggregate functions. 
+
+Syntax:
+SELECT col1, col2, AGG(col3)
+FROM table
+GROUP BY col1, col2;
+
+Use case on Facebook:
+
+Posts per day per region:
+SELECT region, DATE(created_at) AS day, COUNT(*) AS posts
+FROM posts
+GROUP BY region, day;
+
+3. HAVING
+Concept:
+
+Filters results after aggregation (unlike WHERE).
+Useful to apply conditions on aggregate values. 
+
+Syntax:
+SELECT col, AGG(col2)
+FROM table
+GROUP BY col
+HAVING AGG(col2) > value;
+
+Facebook‑style use case:
+
+Users with more than 100 friends:
+SELECT user_id, COUNT(friend_id) AS num_friends
+FROM friendships
+GROUP BY user_id
+HAVING COUNT(friend_id) > 100;
+
+ 1. SQL JOINs
+ Concept (Point by Point)
+Combines rows from two or more tables based on related columns.
+
+Most used in relational databases to query across relationships.
+
+JOINs depend on primary & foreign key relationships.
+
+Types of JOIN:
+
+INNER JOIN: Only matched rows.
+
+LEFT JOIN: All left + matched right.
+
+RIGHT JOIN: All right + matched left.
+
+FULL JOIN: All left + all right.
+
+CROSS JOIN: Cartesian product (every row with every other).
+
+SELF JOIN: Join table with itself.
+
+Syntax
+SELECT a.column1, b.column2
+FROM table1 a
+JOIN table2 b ON a.common_column = b.common_column;
+
+eg-
+-- Tables
+Users(user_id, name)
+Posts(post_id, user_id, content)
+
+-- Query: List all users and their posts
+SELECT u.name, p.content
+FROM Users u
+JOIN Posts p ON u.user_id = p.user_id;
+
+eg-Fetch all comments along with the user names who posted them.
+
+SELECT u.name, c.comment_text
+FROM Users u
+JOIN Comments c ON u.user_id = c.user_id;
+
+
+2. SQL GROUP BY
+Concept (Point by Point)
+Aggregates data based on one or more columns.
+
+Used with aggregate functions: COUNT, SUM, AVG, MIN, MAX.
+
+Groups similar values together.
+
+Must come after WHERE and before ORDER BY.
+
+ Syntax:
+SELECT column, COUNT(*)
+FROM table
+GROUP BY column;
+
+-- Count how many posts each user has made
+SELECT user_id, COUNT(*) AS post_count
+FROM Posts
+GROUP BY user_id;
+
+eg-How many friends each user has?
+
+SELECT user_id, COUNT(friend_id) AS total_friends
+FROM Friendships
+GROUP BY user_id;
+
+
+3. SQL INDEX
+Concept (Point by Point)
+Improves query performance (esp. SELECT).
+
+Works like an index in a book — fast lookup.
+
+Created on frequently searched columns or JOIN keys.
+
+But slows down INSERT/UPDATE/DELETE due to maintenance.
+
+🧪 Syntax
+
+-- Create index
+CREATE INDEX idx_user_name ON Users(name);
+
+-- Drop index
+DROP INDEX idx_user_name;
+
+eg-
+-- Index on email to speed up login lookup
+CREATE INDEX idx_user_email ON Users(email);
+
+eg-Quickly find user by email or username for login
+
+SELECT * FROM Users WHERE email = 'mark@fb.com';
+
+Combine: JOIN + GROUP BY + Function Example
+
+-- Get each user's total number of comments
+SELECT u.name, COUNT(c.comment_id) AS comment_count
+FROM Users u
+JOIN Comments c ON u.user_id = c.user_id
+GROUP BY u.name;
+
+
+
+1️⃣ WHERE vs HAVING
+🔹 WHERE: filters rows before aggregation
+🔹 HAVING: filters groups after GROUP BY
+
+-- Users with posts > 5
+SELECT user_id, COUNT(*) AS total_posts
+FROM Posts
+GROUP BY user_id
+HAVING COUNT(*) > 5;
+
+📌 Use Case: Show only users who made more than 5 posts.
+
+
+
+2️⃣ Subqueries
+🔹 Query inside another query
+🔹 Can be used in SELECT, WHERE, or FROM
+🔹 Types: scalar, correlated, nested
+
+-- Get users with highest post count
+SELECT name FROM Users
+WHERE user_id = (
+  SELECT user_id FROM Posts
+  GROUP BY user_id
+  ORDER BY COUNT(*) DESC LIMIT 1
+);
+
+📌 Use Case: Facebook - Who made the most posts?
+
+
+
+3️⃣ Window Functions
+🔹 Perform ranking, running totals, etc.
+🔹 Do not collapse rows like GROUP BY
+
+SELECT user_id, post_id,
+       RANK() OVER (PARTITION BY user_id ORDER BY created_at DESC) AS recent_rank
+FROM Posts;
+
+📌 Use Case: Get latest post per user (or Nth salary-type problems)
+
+
+
+4️⃣ UNION vs UNION ALL
+🔹 UNION: Removes duplicates
+🔹 UNION ALL: Keeps all rows
+
+SELECT name FROM Customers
+UNION
+SELECT name FROM Vendors;
+
+📌 Use Case: Combine all names from two different sources.
+
+
+
+5️⃣ CASE WHEN
+🔹 Conditional logic in SQL
+🔹 Like if-else
+
+SELECT name,
+  CASE 
+    WHEN gender = 'M' THEN 'Male'
+    WHEN gender = 'F' THEN 'Female'
+    ELSE 'Other'
+  END AS gender_text
+FROM Users;
+
+📌 Use Case: Facebook profile – show readable gender labels.
+
+
+
+6️⃣ Views
+🔹 Saved SQL query (virtual table)
+🔹 Helps simplify complex queries
+CREATE VIEW ActiveUsers AS
+SELECT * FROM Users WHERE status = 'active';
+
+📌 Use Case: Admin panel can use ActiveUsers as a table.
+
+
+
+7️⃣ CTE (Common Table Expression)
+🔹 Temporary result set
+🔹 Declared using WITH keyword
+🔹 Cleaner than subqueries; can be recursive
+
+WITH PostCounts AS (
+  SELECT user_id, COUNT(*) AS total_posts
+  FROM Posts GROUP BY user_id
+)
+SELECT u.name, pc.total_posts
+FROM Users u
+JOIN PostCounts pc ON u.user_id = pc.user_id;
+
+📌 Use Case: Modularize complex queries for readability.
+
+
+
+8️⃣ Constraints
+🔹 Enforce rules at DB level
+🔹 Types:
+
+PRIMARY KEY – Unique identifier
+
+FOREIGN KEY – Link to another table
+
+UNIQUE, NOT NULL, CHECK, DEFAULT
+
+CREATE TABLE Users (
+  user_id INT PRIMARY KEY,
+  email VARCHAR(100) UNIQUE NOT NULL,
+  age INT CHECK(age >= 13)
+);
+
+📌 Use Case: Block underage signup, prevent duplicate emails.
+
+SQL Assignment
+
+Visit:→ https://github.com/niteshsynergy/sqlpractice/blob/main/sqlpractice
+Follow
+
+📘 Section-wise Breakdown (with ~1000 practice questions)
+
+Level
+
+Focus Area
+
+No. of Qs
+
+Example
+
+✅ Beginner
+
+SELECT, WHERE, ORDER, LIMIT, LIKE
+
+100
+
+SELECT * FROM users WHERE full_name LIKE 'A%';
+
+✅ Intermediate
+
+JOINs, Aggregates, GROUP BY, HAVING
+
+150
+
+Get users with more than 5 posts.
+
+✅ Advanced
+
+Subqueries, EXISTS, IN, Nested SELECTs
+
+150
+
+Users who never posted but liked a post.
+
+✅ Expert
+
+CTEs, Window Functions, Ranking
+
+150
+
+Rank users by number of followers.
+
+✅ Real-World Logic
+
+Use-case logic, multi-step JOINs
+
+150
+
+Find top 3 most followed users who posted in last 7 days.
+
+✅ Performance
+
+Query optimization, Indexing practice
+
+50
+
+Explain slow queries and improve with indexes.
+
+✅ Admin/DDL
+
+CREATE, ALTER, DROP, TRIGGERS
+
+100
+
+Add a trigger to log deleted comments.
+
+✅ Transactions
+
+COMMIT, ROLLBACK, Isolation Levels
+
+50
+
+Simulate transfer between users.
+
+✅ JSON/Date
+
+JSON fields, time-based logic
+
+50
+
+Fetch posts with images added in last 30 days.
+
+
+
+
+
+Thank You for Your Support! 🙏
+
+Your encouragement keeps us going!
+
+If you find value in our content, please consider supporting us.
+
+💡 Even a small contribution can make a big difference in helping us build better educational resources.
+
+Donate Now
+
+
+
+MongoDB
+
+
+
+MongoDB is a NoSQL, document-oriented database that stores data in flexible, JSON-like format (BSON). It's known for scalability, high performance, and flexible schema, making it ideal for handling large volumes of unstructured data.
+
+
+
+✅ Module 0: Introduction of MongoDB
+
+MongoDB is a powerful NoSQL database that offers a range of features designed to provide flexibility, scalability, and high performance. Below are some of the most important features of MongoDB, merging the points from both sources:
+
+1. Document-Oriented Storage
+
+MongoDB stores data as documents within collections, with each document containing key-value pairs (like JSON objects). This model is highly flexible and can accommodate a variety of data types without a fixed schema.
+
+2. Schema-Less Design
+
+MongoDB doesn’t require a predefined schema. This means you can store different fields in each document of a collection, allowing for more flexible data structures. This is especially useful for applications that need to evolve over time or store unstructured data.
+
+3. Rich Query Language
+
+MongoDB supports ad hoc queries, which means you can search by fields, perform range queries, and even use regular expressions. It also offers aggregation capabilities and map-reduce operations to process data efficiently.
+
+4. Indexing
+
+MongoDB allows indexing on any field in a document, which significantly improves the performance of query operations. Indexes help speed up data retrieval, especially for large datasets.
+
+5. Replication for High Availability
+
+MongoDB supports replica sets, which provide data replication across multiple servers. A master node handles both read and write operations, while slave nodes replicate the data. In case of a failure, the system can automatically promote a slave to become the master, ensuring high availability and fault tolerance.
+
+6. Horizontal Scalability
+
+MongoDB supports sharding, which allows data to be distributed across multiple servers. This enables horizontal scaling to handle large datasets and high-throughput applications without compromising performance.
+
+7. Automatic Load Balancing
+
+Due to its sharding capabilities, MongoDB automatically balances the load across different shards. This ensures that no single server is overloaded and that performance remains consistent, even as the system grows.
+
+8. High Performance
+
+MongoDB is optimized for high performance, supporting fast reads and writes. It can handle large volumes of data and scale efficiently across multiple machines, making it ideal for high-traffic applications.
+
+9. Data Duplication for Fault Tolerance
+
+MongoDB’s replication mechanism ensures that data is duplicated across multiple servers. This helps keep the system running smoothly even in the event of hardware failures, ensuring data is not lost and availability is maintained.
+
+10. Ease of Administration
+
+MongoDB is relatively easy to administer, especially in case of failures. With its built-in replication and automatic failover mechanisms, database administrators can manage MongoDB without worrying about complex recovery processes.
+
+11. Support for JSON Data Model
+
+MongoDB uses the JSON data model with dynamic schemas, allowing it to store various types of data without needing a rigid schema structure. This makes it highly adaptable to different use cases.
+
+12. Supports MapReduce and Aggregation Tools
+
+MongoDB provides support for MapReduce operations and powerful aggregation tools that allow for complex data processing tasks, such as grouping, filtering, and summarizing data, in a scalable and efficient manner.
+
+13. Stores Files of Any Size
+
+MongoDB makes it easy to store and manage large files, such as images, videos, or documents, without complicating the database stack. Its GridFS feature enables the storage of files larger than the standard document size limit.
+
+14. Flexible and Scalable Architecture
+
+MongoDB’s architecture allows it to scale horizontally across multiple servers (via sharding) and vertically by adding more resources to a single node. This flexibility makes MongoDB an excellent choice for applications that expect rapid growth or fluctuating workloads.
+
+
+
+Use Cases for MongoDB:
+
+Real-Time Analytics: MongoDB is ideal for applications that require real-time analytics, such as social media feeds or IoT platforms.
+
+Content Management: It is commonly used for content management systems, blogging platforms, and e-commerce websites due to its ability to handle varied data types.
+
+Big Data: MongoDB is suitable for storing and managing large volumes of unstructured data, often seen in big data applications.
+
+Mobile Applications: MongoDB is used in mobile apps that require flexible data storage and quick scaling capabilities.
+
+Product Catalogs: Its schema-less structure is particularly useful in managing product catalogs where different items may have different attributes.
+
+Databases can be divided in 3 types:
+
+RDBMS (Relational Database Management System)
+
+OLAP (Online Analytical Processing)
+
+NoSQL (recently developed database)
+
+NoSQL Database
+
+NoSQL Database is used to refer a non-SQL or non relational database.
+
+It provides a mechanism for storage and retrieval of data other than tabular relations model used in relational databases. NoSQL database doesn't use tables for storing data. It is generally used to store big data and real-time web applications.
+
+
+
+Advantages of NoSQL
+
+It supports query language.
+
+It provides fast performance.
+
+It provides horizontal scalability.
+
+MongoDB Data Types: Concepts, Use Cases, and Real-Time Example with Code Snippets:
+
+1. String
+
+Concept: Strings in MongoDB are used to store text. They are UTF-8 encoded.
+
+Use Case: Storing names, addresses, or other textual information.
+
+Real-Time Example: In a blogging application, storing the title or body of a blog post.
+
+Code Snippet:
+
+db.blogposts.insertOne({
+   title: "MongoDB Tutorial",
+   body: "Learn how to use MongoDB effectively."
+});
+
+
+
+2. Integer
+
+Concept: Integer values are used to store whole numbers (positive or negative). MongoDB uses 32-bit or 64-bit integers based on the value range.
+
+Use Case: Storing age, quantity, or other numeric values.
+
+Real-Time Example: In an e-commerce platform, storing the number of products in stock.
+
+Code Snippet:
+
+db.products.insertOne({
+   name: "Laptop",
+   stock: 50
+});
+
+3. Boolean
+
+Concept: Booleans represent a true/false value.
+
+Use Case: To flag or mark statuses like whether an account is active or whether a task is completed.
+
+Real-Time Example: In a task management application, marking whether a task is completed.
+
+Code Snippet:
+
+db.tasks.insertOne({
+   task: "Complete MongoDB tutorial",
+   completed: false
+});
+
+4. Date
+
+Concept: The Data type is used to store date and time in ISODate format.
+
+Use Case: Storing timestamps for records such as user registration, login times, or order dates.
+
+Real-Time Example: Storing the date of an order placed in an online shopping platform.
+
+Code Snippet:
+
+db.orders.insertOne({
+   orderId: 12345,
+   orderDate: new Date("2024-11-28T10:00:00Z")
+});
+
+5. ObjectId
+
+Concept: MongoDB automatically generates a unique identifier for each document, which is of type ObjectId. It is a 12-byte identifier.
+
+Use Case: Unique identification for each document in a collection. Primarily used for primary keys.
+
+Real-Time Example: Identifying each user in a user management system.
+
+Code Snippet:
+
+const userId = new ObjectId(); // Generate a unique ObjectId
+db.users.insertOne({
+   _id: userId,
+   name: "John Doe",
+   email: "johndoe@example.com"
+});
+
+6. Array
+
+Concept: Arrays are used to store multiple values within a single field. MongoDB arrays can store different data types, such as strings, integers, and even objects.
+
+Use Case: Storing multiple values like a list of tags, categories, or items in an order.
+
+Real-Time Example: In an e-commerce application, storing a list of product tags (e.g., size, color, material).
+
+Code Snippet:
+
+db.products.insertOne({
+   name: "T-shirt",
+   tags: ["cotton", "red", "medium"]
+});
+
+7. Embedded Documents (Subdocuments)
+
+Concept: MongoDB allows embedding documents within other documents. These embedded documents can have their own structure.
+
+Use Case: Storing related data that belongs together, such as an address or user profile.
+
+Real-Time Example: Storing a user's profile information within the user document.
+
+Code Snippet:
+
+db.users.insertOne({
+   name: "Jane Smith",
+   address: {
+       street: "123 Elm St",
+       city: "Springfield",
+       postalCode: "12345"
+   }
+});
+
+8. Null
+
+Concept: The Null type is used to represent a null or missing value.
+
+Use Case: Representing data that is missing, unknown, or explicitly set to null.
+
+Real-Time Example: In a product catalog, setting the "discounted price" to null for products that aren't on sale.
+
+Code Snippet:
+
+db.products.insertOne({
+   name: "Smartphone",
+   discountedPrice: null
+});
+
+9. Binary Data
+
+Concept: MongoDB supports binary data for storing files, images, or any other binary objects.
+
+Use Case: Storing user profile pictures or document attachments.
+
+Real-Time Example: Storing an image file uploaded by a user in a photo-sharing application.
+
+Code Snippet:
+
+// Store binary data (e.g., an image) in GridFS
+var fs = require('fs');
+var file = fs.readFileSync('path/to/image.jpg');
+db.fs.files.insertOne({
+   filename: "image.jpg",
+   contentType: "image/jpeg",
+   file: file
+});
+
+10. Decimal128
+
+Concept: This is a high-precision decimal type used to store precise floating-point values.
+
+Use Case: Storing financial data, currency values, or other data that requires high precision.
+
+Real-Time Example: Storing the price of a product in an e-commerce application.
+
+Code Snippet:
+
+const Decimal128 = require('mongodb').Decimal128;
+db.products.insertOne({
+   name: "Laptop",
+   price: Decimal128.fromString("1299.99")
+});
+
+
+11. Timestamp
+
+Concept: This data type is used to store a 64-bit value representing the timestamp of an event.
+
+Use Case: Storing event timestamps such as when a document was created or updated.
+
+Real-Time Example: Tracking the last login timestamp for a user.
+
+Code Snippet:
+
+db.users.insertOne({
+   name: "Alice",
+   lastLogin: new Timestamp()
+});
+
+For more details or study visit → https://www.openmymind.net/mongodb.pdf
+ 
+
+___________________________________________________________________________________
+
+✅ Module 1: Installation of MongoDB
+
+
+
+🖥️ 3. Install MongoDB on Your Machine
+
+✅ Option A: Local Installation
+
+Step-by-step:
+
+Go to https://www.mongodb.com/try/download/community
+
+Download MongoDB Community Edition
+
+Install using default settings.
+
+Also download MongoDB Compass (GUI for MongoDB).
+
+To test:
+
+mongod  # runs the MongoDB server
+ 
+
+In a new terminal:
+
+bash
+
+mongo   # opens the shell (MongoDB CLI)
+ 
+
+⚠️ On Windows, you may need to add MongoDB to your system PATH.
+
+Option B: Use MongoDB Atlas (Cloud - Free)
+
+Go to https://www.mongodb.com/cloud/atlas/register
+
+Create a free cluster
+
+Add IP: 0.0.0.0/0 (allows connection from anywhere)
+
+Create a database user
+
+Connect using MongoDB Compass or URI string
+
+
+
+✅ 4. First MongoDB Commands (Try in shell or Compass)
+
+📂 Create a database and collection
+
+✅ 4. First MongoDB Commands (Try in shell or Compass)
+
+📂 Create a database and collection
+
+
+
+use niteshsynergyDB    // creates or switches to niteshsynergyDB    
+
+db.createCollection("users")  // creates collection
+ 
+
+➕ Insert a document
+
+db.users.insertOne({
+ _id: "u101",
+ name: "Nitesh",
+ age: 29,
+ country: "India"
+})
+ 
+
+🔍 View documents
+
+db.users.find().pretty()
+ 
+
+🧪 Quick Practice Quiz
+
+What does MongoDB use instead of tables?
+
+What format are documents stored in MongoDB?
+
+How do you insert a document in MongoDB shell?
+
+What is MongoDB Compass used for?
+
+✅ Assignment for Today
+
+Install MongoDB + Compass (or setup Atlas)
+
+Create a DB named practiceDB
+
+Create a collection students
+
+Insert 3 student documents:
+
+{
+ "rollNo": 1,
+ "name": "Amit",
+ "marks": 75
+}
+ 
+
+✅ Module 2: Basic CRUD Operations in MongoDB
+
+🎯 Learning Goals:
+
+Learn how to Create, Read, Update, and Delete documents using MongoDB shell or Compass.
+
+📘 MongoDB CRUD Breakdown
+
+📥 1. Create
+
+// Insert one document
+db.students.insertOne({
+ rollNo: 1,
+ name: "Amit",
+ marks: 75
+})
+
+// Insert multiple documents
+db.students.insertMany([
+ { rollNo: 2, name: "Nitesh", marks: 88 },
+ { rollNo: 3, name: "Sneha", marks: 92 }
+])
+ 
+
+🔍 2. Read
+
+// Find all documents
+db.students.find()
+
+// Find with condition
+db.students.find({ name: "Nitesh" })
+
+// Pretty print
+db.students.find().pretty()
+
+// Find one
+db.students.findOne({ rollNo: 2 })
+ 
+
+✏️ 3. Update
+
+// Update one document
+db.students.updateOne(
+ { rollNo: 2 },
+ { $set: { marks: 90 } }
+)
+
+// Update many documents
+db.students.updateMany(
+ { marks: { $lt: 80 } },
+ { $set: { status: "Needs Improvement" } }
+)
+ 
+
+❌ 4. Delete
+
+// Delete one document
+db.students.deleteOne({ rollNo: 3 })
+
+// Delete many documents
+db.students.deleteMany({ status: "Needs Improvement" })
+ 
+
+🛠️ Hands-On Exercise
+
+Try these steps in MongoDB shell or Compass:
+
+Use your database practiceDB:
+
+use practiceDB
+ 
+
+Insert at least 3 new student records with fields: rollNo, name, marks, grade.
+
+Read all documents.
+
+Update a student's marks.
+
+Delete one student record
+
+
+
+✅ Module 3: Query Operators in MongoDB (Filtering & Search)
+
+🎯 Learning Goals:
+
+Use MongoDB operators to filter, search, and query data.
+
+Understand how conditions like $gt, $lt, $in, $and, and $or work.
+
+
+
+📘 Basic MongoDB Query Operators
+
+Assume your collection has these student documents:
+
+{ "rollNo": 1, "name": "Amit", "marks": 75 }
+{ "rollNo": 2, "name": "Nitesh", "marks": 88 }
+{ "rollNo": 3, "name": "Sneha", "marks": 92 }
+{ "rollNo": 4, "name": "Rahul", "marks": 67 }
+ 
+
+🔍 Comparison Operators
+
+Operator
+
+Meaning
+
+Example
+
+$gt
+
+Greater than
+
+{ marks: { $gt: 80 } }
+
+$lt
+
+Less than
+
+{ marks: { $lt: 70 } }
+
+$gte
+
+Greater than or equal
+
+{ marks: { $gte: 88 } }
+
+$lte
+
+Less than or equal
+
+{ marks: { $lte: 75 } }
+
+$ne
+
+Not equal
+
+{ name: { $ne: "Nitesh" } }
+
+$in
+
+Matches any in array
+
+{ name: { $in: ["Amit", "Sneha"] } }
+
+
+
+
+
+🧠 Logical Operators
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// AND - both conditions must be true
+db.students.find({
+ $and: [{ marks: { $gt: 70 } }, { marks: { $lt: 90 } }]
+})
+
+// OR - either condition must be true
+db.students.find({
+ $or: [{ marks: { $lt: 70 } }, { marks: { $gt: 90 } }]
+})
+ 
+
+
+
+⛓️ Nested Fields & Arrays
+
+Suppose this document exists:
+
+{
+ "rollNo": 5,
+ "name": "Anjali",
+ "marks": 85,
+ "skills": ["Java", "MongoDB", "Spring Boot"]
+}
+ 
+
+You can search inside arrays:
+
+db.students.find({ skills: "MongoDB" })  // exact match in array
+
+db.students.find({ skills: { $in: ["React", "MongoDB"] } })
+ 
+
+
+
+✅ Module 4: MongoDB Data Modeling
+
+(Embedded Documents, Referencing, and Schema Design)
+
+🎯 Learning Goals:
+
+Understand how to structure MongoDB collections using:Embedded documents
+
+Referenced documents
+
+Design optimal schemas for real-world use cases (e.g., e-commerce, billing, etc.)
+
+📘 1. Embedded Documents
+
+Embed when you have one-to-few relationships or data that's always read together.
+
+🔍 Example: A user with embedded address
+
+
+
+{
+ "_id": 1,
+ "name": "Nitesh",
+ "email": "nitesh@example.com",
+ "address": {
+   "street": "MG Road",
+   "city": "Patna",
+   "zip": "800001"
+ }
+}
+ 
+
+✅ Pros:
+
+Fewer joins
+
+Faster read for nested data
+
+❌ Cons:
+
+Redundant if reused across documents
+
+Not ideal for one-to-many (e.g., hundreds of comments)
+
+📘 2. Referenced Documents
+
+Reference when you have one-to-many or many-to-many relationships.
+
+🔍 Example: Customer and Orders in separate collections
+
+customers collection
+
+
+
+{
+ "_id": "cust101",
+ "name": "Amit Kumar"
+}
+ 
+
+orders collection
+
+{
+ "_id": "order789",
+ "custId": "cust101",
+ "amount": 450.0,
+ "items": ["item1", "item2"]
+}
+ 
+
+To fetch related orders, use:
+
+db.orders.find({ custId: "cust101" })
+ 
+
+✅ In aggregation: $lookup works like a JOIN.
+
+
+
+📌 3. Data Modeling Guidelines
+
+Case
+
+Best Approach
+
+User profile with address
+
+Embed
+
+Blog post and comments
+
+Embed (few) or Ref
+
+Customer and multiple orders
+
+Reference
+
+Category and product
+
+Reference
+
+Invoice with product snapshots
+
+Embed (snapshot)
+
+
+
+✅ Module 5: Aggregation Framework in MongoDB
+
+🎯 Learning Goals:
+
+Understand how to perform complex data transformations and analytics using the aggregation pipeline.
+
+Learn stages like $match, $group, $project, $sort, $lookup, etc.
+
+
+
+📘 What is Aggregation?
+
+Aggregation is like SQL’s GROUP BY, JOIN, or even Excel's Pivot Table. It lets you process and analyze large datasets in real time.
+
+
+
+🛠️ Aggregation Pipeline Stages
+
+Each stage is like a step in a conveyor belt:
+
+
+
+db.collection.aggregate([
+ { stage1 },
+ { stage2 },
+ { stage3 }
+])
+ 
+
+1️⃣ $match — Filter Documents
+
+db.students.aggregate([
+ { $match: { marks: { $gt: 80 } } }
+])
+ 
+
+2️⃣ $group — Group & Aggregate Data
+
+db.students.aggregate([
+ {
+   $group: {
+     _id: "$grade",  // group by grade
+     totalMarks: { $sum: "$marks" },
+     avgMarks: { $avg: "$marks" }
+   }
+ }
+])
+ 
+
+3️⃣ $project — Shape Output
+
+db.students.aggregate([
+ {
+   $project: {
+     name: 1,
+     marks: 1,
+     percentage: { $divide: ["$marks", 100] }
+   }
+ }
+])
+ 
+
+4️⃣ $sort — Sort Results
+
+db.students.aggregate([
+ { $sort: { marks: -1 } }  // descending
+])
+ 
+
+5️⃣ $lookup — Join Collections (Reference)
+
+Join orders with customers:
+
+db.orders.aggregate([
+ {
+   $lookup: {
+     from: "customers",
+     localField: "custId",
+     foreignField: "_id",
+     as: "customerDetails"
+   }
+ }
+])
+ 
+
+
+
+✅ Module 6: Indexing, Performance & Explain Plans in MongoDB
+
+🎯 Learning Goals:
+
+Understand how indexing works in MongoDB.
+
+Learn how to create, view, and use indexes to speed up queries.
+
+Analyze performance using the explain() method.
+
+
+
+📘 1. What is an Index?
+
+An index in MongoDB is like an index in a book — it helps the database find data faster, without scanning every document.
+
+📌 Default index: Every _id field in MongoDB has an index automatically.
+
+
+
+🔍 2. Creating Indexes
+
+db.collection.createIndex({ fieldName: 1 }) // ascending
+db.collection.createIndex({ fieldName: -1 }) // descending
+ 
+
+db.students.createIndex({ name: 1 })  // index on 'name'
+ 
+
+🔥 3. Compound Index
+
+An index on multiple fields:
+
+db.students.createIndex({ name: 1, marks: -1 })
+ 
+
+Use when your query filters/sorts on multiple fields.
+
+_____________________________________________________________________
+
+🚫 4. Dropping an Index
+
+db.students.dropIndex({ name: 1 })
+ 
+
+To drop all:
+
+db.students.dropIndexes()
+ 
+
+🛠️ 5. Viewing Indexes
+
+db.students.getIndexes()
+ 
+
+🔍 6. Analyze Query with explain()
+
+db.students.find({ name: "Nitesh" }).explain("executionStats")
+ 
+
+
+
+Look for:
+
+stage: IXSCAN means index used, COLLSCAN means full collection scan (slow).
+
+nReturned: how many docs matched
+
+executionTimeMillis: time taken
+
+
+
+💡 7. When to Use Indexes
+
+✅ Use indexes on:
+
+Fields used in .find() filters
+
+Fields used in .sort()
+
+Fields used in $lookup joins
+
+❌ Don’t overuse — too many indexes slow down writes.
+
+
+
+✅ Module 7: MongoDB Triggers and Change Streams
+
+
+
+🎯 Learning Goals:
+
+Understand Change Streams to react to data changes in real time.
+
+Implement MongoDB triggers for specific events.
+
+📘 What are Change Streams?
+
+Change Streams allow applications to watch for changes in the database and react to them in real time, like triggers in relational databases.
+
+
+
+🛠️ How to Use Change Streams:
+
+Simple Change Stream Example
+
+const changeStream = db.collection.watch();
+
+changeStream.on("change", (change) => {
+ console.log(change);
+});
+ 
+
+This will log changes (insert, update, delete) in real time.
+
+
+
+2. Using Filters
+
+You can filter change streams for specific operations (e.g., only updates or deletions).
+
+const changeStream = db.collection.watch([
+ { $match: { operationType: "update" } }
+]);
+ 
+
+Handling Change Streams in Production
+
+Ensure proper error handling.
+
+Use them for event-driven architecture (notifications, logging, real-time apps).
+
+📚 Use Cases:
+
+Real-time notifications
+
+Activity tracking in social apps
+
+Data replication
+
+
+
+✅ Module 8: MongoDB Atlas - Cloud Deployment
+
+
+
+🎯 Learning Goals:
+
+Set up MongoDB Atlas (cloud-hosted MongoDB service).
+
+Understand deployment, scaling, and monitoring in the cloud.
+
+📘 What is MongoDB Atlas?
+
+MongoDB Atlas is MongoDB’s fully managed cloud service for deploying, managing, and scaling MongoDB clusters in the cloud.
+
+
+
+🛠️ Steps to Set Up MongoDB Atlas:
+
+Create an Atlas Account
+Visit MongoDB Atlas and sign up.
+
+Create a ClusterChoose a cloud provider (AWS, Google Cloud, or Azure).
+
+Select a cluster tier (free-tier is good for testing).
+
+Database ConfigurationAdd database users and IP whitelist (to connect securely).
+
+Connect to Atlas via MongoDB CompassUse the connection string provided in Atlas.
+
+📚 Best Practices for Atlas:
+
+Enable backups.
+
+Monitor your cluster performance using Atlas’ built-in tools.
+
+Use autoscaling for growth.
+
+
+
+✅ Module 9: MongoDB Role-Based Access Control (RBAC)
+
+
+
+🎯 Learning Goals:
+
+Learn Role-Based Access Control (RBAC) to manage database permissions.
+
+Implement user roles like Admin, Read-Write, Read-Only in MongoDB.
+
+📘 What is RBAC?
+
+RBAC in MongoDB allows you to define and enforce who can access the database and what actions they can perform (read, write, admin).
+
+
+
+🛠️ Create Users and Assign Roles:
+
+Create User with Specific Roles:
+
+db.createUser({
+ user: "myUser",
+ pwd: "myPassword",
+ roles: [ { role: "readWrite", db: "test" } ]
+});
+ 
+
+
+
+2. Built-in Roles:
+
+read: Can only read.
+
+readWrite: Can read and write.
+
+dbAdmin: Can manage databases.
+
+root: Admin privileges for all databases.
+
+
+
+✅ Module 10: MongoDB Sharding & Horizontal Scalability
+
+
+
+🎯 Learning Goals:
+
+Understand sharding in MongoDB for horizontal scalability.
+
+Set up a sharded cluster for high-volume data handling.
+
+📘 What is Sharding?
+
+Sharding distributes your data across multiple machines (or shards), which helps manage large datasets and high-traffic apps.
+
+
+
+🛠️ Sharding Steps:
+
+Sharded Cluster Setup:Shard: A replica set containing a subset of your data.
+
+Mongos: Query router.
+
+Config Servers: Store metadata about the cluster.
+
+Shard Key:
+Choose a field for sharding (e.g., userId), which evenly distributes the data.
+
+📚 Best Practices for Sharding:
+
+Choose a good shard key.
+
+Monitor sharded clusters for balance.
+
+
+
+✅ Module 11: MongoDB Geospatial Queries
+
+
+
+🎯 Learning Goals:
+
+Learn how to store and query geospatial data (locations, maps).
+
+Understand how to use 2d, 2dsphere indexes for location-based queries.
+
+📘 What are Geospatial Queries?
+
+Geospatial queries help you find locations within a given radius or near other geographical points, like GPS coordinates.
+
+
+
+🛠️ Geospatial Index Types:
+
+2d: Used for flat data like x, y coordinates.
+
+2dsphere: Used for spherical data (earth-like coordinates).
+
+🧪 Practice Task:
+
+Store GPS coordinates (longitude, latitude) in a locations collection.
+
+Create a 2dsphere index.
+
+Run queries like:
+
+
+
+db.locations.find({
+ location: {
+   $near: {
+     $geometry: { type: "Point", coordinates: [ -73.97, 40.77 ] },
+     $maxDistance: 5000
+   }
+ }
+});
+ 
+
+→ End….
+
+Thank You for Your Support! 🙏
+
+Your encouragement keeps us going!
+
+If you find value in our content, please consider supporting us.
+
+💡 Even a small contribution can make a big difference in helping us build better educational resources.
+
+Donate Now  
+
+Follow us on Social media like X, Facebook, Instagram, YouTube & other platform where you find us!
+
+
+
+Data Integrity, Data Security, and Data Indexing:
+
+In a Java Spring Boot application, you can achieve Data Integrity, Data Security, and Data Indexing in various ways using Spring and related technologies. Here's a breakdown of how each can be achieved:
+
+
+
+In a Java Spring Boot application, you can achieve Data Integrity, Data Security, and Data Indexing in various ways using Spring and related technologies. Here's a breakdown of how each can be achieved:
+
+1. Data Integrity
+
+Data integrity refers to the accuracy, consistency, and reliability of data throughout its lifecycle. This ensures that data is not corrupted or lost and adheres to defined rules and constraints.
+
+How to Achieve Data Integrity in Spring Boot:
+
+Database Constraints (Foreign Keys, Unique, Not Null): You can define constraints directly in your database schema (e.g., using JPA annotations in Spring Boot).
+
+Validation using JSR-303/JSR-380 (Bean Validation API): You can use javax.validation annotations to enforce data integrity at the application level before data is persisted.
+
+Example with JPA and Bean Validation (Spring Boot):
+
+
+
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Positive;
+
+@Entity
+public class Product {
+   
+   @Id
+   @GeneratedValue(strategy = GenerationType.IDENTITY)
+   private Long id;
+
+   @NotNull(message = "Product name cannot be null")
+   private String name;
+
+   @Positive(message = "Price must be positive")
+   private double price;
+
+   @NotNull(message = "Stock cannot be null")
+   private Integer stock;
+}
+ 
+
+Spring Boot Validation Example:
+
+ import org.springframework.stereotype.Service;
+import javax.validation.Valid;
+
+@Service
+public class ProductService {
+
+   private final ProductRepository productRepository;
+
+   public ProductService(ProductRepository productRepository) {
+       this.productRepository = productRepository;
+   }
+
+   public void addProduct(@Valid Product product) {
+       productRepository.save(product);  // Will automatically validate the product before saving
+   }
+}
+ 
+
+
+
+JPA Annotations like @NotNull, @Size, @Email help ensure integrity before the entity is persisted to the database.
+
+Transaction Management ensures that changes are applied in a way that preserves integrity, using @Transactional.
+
+2. Data Security
+
+Data security ensures that sensitive data is protected from unauthorized access or tampering. This includes data encryption, authentication, authorization, and secure transmission.
+
+How to Achieve Data Security in Spring Boot:
+
+Authentication and Authorization: Use Spring Security for authentication (who are you?) and authorization (what are you allowed to do?).
+
+Data Encryption: Use AES (Advanced Encryption Standard) or RSA to encrypt sensitive data before storing it in the database.
+
+Spring Security Example (Basic Authentication):
+
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+
+@EnableWebSecurity
+public class SecurityConfig extends WebSecurityConfigurerAdapter {
+
+   @Override
+   protected void configure(HttpSecurity http) throws Exception {
+       http
+           .authorizeRequests()
+               .antMatchers("/admin/**").hasRole("ADMIN")
+               .antMatchers("/user/**").hasRole("USER")
+               .anyRequest().authenticated()
+           .and()
+           .formLogin();
+   }
+}
+Encrypting Sensitive Data (e.g., passwords or credit card numbers):
+
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
+
+@Service
+public class UserService {
+
+   private final PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+
+   public void registerUser(String username, String plainPassword) {
+       String encodedPassword = passwordEncoder.encode(plainPassword);
+       // Store encodedPassword in the database
+   }
+}
+ 
+
+JWT for Token-Based Authentication:
+
+Secure your APIs with JWT (JSON Web Tokens) for stateless authentication.
+
+Example code for generating a JWT token:
+
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.SignatureAlgorithm;
+
+public class JwtTokenUtil {
+
+   private String secretKey = "mySecretKey"; // Secret key used to sign the JWT
+
+   public String generateToken(String username) {
+       return Jwts.builder()
+               .setSubject(username)
+               .signWith(SignatureAlgorithm.HS256, secretKey)
+               .compact();
+   }
+}
+ 
+
+Transport Layer Security (TLS): Ensure data is transmitted securely by enabling HTTPS for all sensitive API requests in Spring Boot.
+
+
+
+3. Data Indexing
+
+Data indexing improves the performance of database queries by allowing fast lookups based on indexed fields.
+
+How to Achieve Data Indexing in Spring Boot:
+
+JPA Indexing: You can create indexes on frequently searched fields using @Indexed (Spring Data JPA, Hibernate).
+
+Spring Data Elasticsearch: If you're working with large-scale data and require high-performance search functionality, integrate Elasticsearch with Spring Boot for full-text search and indexing.
+
+Example with JPA Indexing:
+
+
+
+import javax.persistence.*;
+import org.hibernate.search.annotations.Indexed;
+
+@Entity
+@Indexed
+public class Product {
+
+   @Id
+   @GeneratedValue(strategy = GenerationType.IDENTITY)
+   private Long id;
+
+   @Column(nullable = false, unique = true)
+   private String name;
+
+   @Column(nullable = false)
+   private double price;
+
+   @Indexed
+   @Column(nullable = false)
+   private String category;
+}
+ 
+
+In this example:
+
+The @Indexed annotation marks the category column to be indexed, improving search performance on this column.
+
+Spring Data Elasticsearch: To implement Elasticsearch indexing, add dependencies to your pom.xml file:
+
+<dependency>
+   <groupId>org.springframework.boot</groupId>
+   <artifactId>spring-boot-starter-data-elasticsearch</artifactId>
+</dependency>
+ 
+
+Then configure and use ElasticsearchRepository for efficient querying:
+
+
+
+import org.springframework.data.elasticsearch.repository.ElasticsearchRepository;
+
+public interface ProductRepository extends ElasticsearchRepository<Product, Long> {
+   List<Product> findByCategory(String category);
+}
+ 
+
+Summary:
+
+Data Integrity: Use JPA constraints and validation annotations like @NotNull, @Positive, and @Size, along with transactional management for atomic operations.
+
+Data Security: Use Spring Security for authentication and authorization, and apply encryption techniques for sensitive data storage.
+
+Data Indexing: Implement indexing in JPA entities with @Indexed for faster queries, or use Elasticsearch for high-performance search and indexing.
+
+With Spring Boot, these practices can be easily integrated into your application, ensuring reliable, secure, and high-performing systems.
+
