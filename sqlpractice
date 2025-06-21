@@ -509,3 +509,2024 @@ INSERT INTO follows (follower_id, followee_id, followed_at) VALUES (46, 23, '202
 INSERT INTO follows (follower_id, followee_id, followed_at) VALUES (47, 11, '2024-07-23 22:24:39');
 INSERT INTO follows (follower_id, followee_id, followed_at) VALUES (33, 44, '2024-01-09 01:05:21');
 INSERT INTO follows (follower_id, followee_id, followed_at) VALUES (29, 34, '2024-08-29 01:09:41');
+
+
+✅ SQL Practice Questions 1–100
+List all columns from the users table.
+
+Show only the username and email of all users.
+
+Find all users created after '2024-01-01'.
+
+Get usernames that start with 'A'.
+
+List all users whose email ends in '@gmail.com'.
+
+Display users created between '2023-01-01' and '2024-01-01'.
+
+Retrieve users whose name contains 'john'.
+
+List all posts with a caption.
+
+Display the top 5 most recent posts.
+
+Show the 10 earliest users who signed up.
+
+Retrieve usernames sorted alphabetically.
+
+Show full names of users in reverse alphabetical order.
+
+Display users who signed up in the year 2023.
+
+Get all users with null email values.
+
+Get all users who have a non-null full name.
+
+List distinct full names from users.
+
+Show all posts where the caption contains 'travel'.
+
+Find users with usernames exactly 6 characters long.
+
+Find all posts that were created on a weekend.
+
+Show users who have the letter 'e' in their full name.
+
+List 5 users with the longest usernames.
+
+Find users who registered today.
+
+Get users whose usernames end with numbers.
+
+Show users whose email contains both 'gmail' and 'yahoo'.
+
+Show all users whose usernames are lowercase only.
+
+Display only user_id and created_at for all users.
+
+List all users created after '2024-06-01'.
+
+Find all users who registered in the last 30 days.
+
+Display all users created in January 2024.
+
+Get user details who created their account at midnight.
+
+List all usernames in uppercase.
+
+Get all users except the first 10.
+
+Find users created before '2022-12-31'.
+
+Find usernames starting with 'n' and ending with 'h'.
+
+Show users whose full name has more than two words.
+
+Get all users who signed up on a Monday.
+
+Display users whose id is an odd number.
+
+Retrieve users whose email field contains numbers.
+
+Get all usernames longer than 10 characters.
+
+Display users who created their account in February.
+
+Show all users with emails that include 'hotmail'.
+
+Retrieve all user IDs in ascending order.
+
+List all usernames that contain exactly one vowel.
+
+Show all user emails sorted by domain.
+
+Find usernames that are palindromes.
+
+List all user records created before noon.
+
+Find all usernames that contain '_'.
+
+Show user records where the name starts with 'S' and ends with 'a'.
+
+Display usernames with at least two repeated letters.
+
+Show users with names longer than 20 characters.
+
+List all users with blank or whitespace-only full names.
+
+Retrieve users who joined on the last day of any month.
+
+Find users who joined in leap years.
+
+List all user records sorted by email in descending order.
+
+Show all usernames containing the substring 'dev'.
+
+Find the first 10 users who joined in 2025.
+
+Get users whose email does not include '@'.
+
+Show users with invalid email formats (no . in domain).
+
+Find users with special characters in their usernames.
+
+List all users where the id is divisible by 5.
+
+Show users whose username is same as their email prefix.
+
+Display all users with a dot . in their username.
+
+List all users with numbers in their full name.
+
+Find all users who signed up on Sundays.
+
+Show 10 users with the earliest registration date.
+
+Display users with email domain @example.com.
+
+Get all usernames sorted by length.
+
+Find users whose email address is in uppercase.
+
+Show users where username and email are identical (case-insensitive).
+
+Get users who registered between '2024-01-01' and '2024-06-01'.
+
+Retrieve users whose full names are only two words.
+
+Find usernames with no alphabetic characters.
+
+List all user records containing the word 'admin'.
+
+Display users where username includes both '_' and numbers.
+
+Find users whose email provider is 'protonmail.com'.
+
+Show user accounts created exactly at 12:00:00.
+
+Get user emails that contain double dots ...
+
+Show all usernames with double letters (ll, oo, etc.).
+
+Retrieve user records where username = full_name.
+
+Display all usernames that start and end with the same letter.
+
+Find usernames with alternating vowels and consonants.
+
+Show users who signed up in Q1 of 2024.
+
+Display usernames where second character is a number.
+
+Find usernames with exactly 3 vowels.
+
+Get all users who signed up before '2020-01-01'.
+
+Display user data created in the last 7 days.
+
+Retrieve usernames that contain the letter z.
+
+Show usernames where all characters are lowercase.
+
+Get user records with blank full_name and blank email.
+
+List users who signed up at exactly 12:30 PM.
+
+Find users with username matching a regex pattern.
+
+Display users with usernames longer than 15 characters.
+
+Show top 10 users by earliest sign-up date.
+
+Retrieve all records sorted by year, then by month.
+
+Find all usernames that include vowels in reverse order.
+
+Show all users whose names have no repeated characters.
+
+Get users whose name has more vowels than consonants.
+
+Display users with initials J.K.
+
+Retrieve all records from the users table in random order.
+
+Show the count of total users in the system.
+
+✅ SQL Practice Questions 101–200
+Show each user and the number of posts they have.
+
+List all posts with their corresponding usernames.
+
+Count total likes received by each user.
+
+Get all comments with the commenter's username.
+
+Find users who have posted more than 5 times.
+
+Retrieve posts that have more than 10 likes.
+
+Show each post and the number of comments on it.
+
+List usernames of users who have never posted.
+
+Display total number of posts created each month.
+
+Find posts where total likes exceed 20.
+
+List all users with their follower count.
+
+Retrieve usernames with no followers.
+
+Show users who follow more than 10 others.
+
+Count users who commented on their own post.
+
+Get top 5 most liked posts along with user who posted.
+
+Display number of comments each user has made.
+
+Show users who both post and like regularly (more than 5 each).
+
+Find average likes per user per post.
+
+Show usernames and count of users they follow.
+
+Get total number of likes given by each user.
+
+Show all posts with 0 comments (use LEFT JOIN).
+
+Display total interactions (likes + comments) per post.
+
+List users with highest interaction rate per post.
+
+Show all users who liked their own posts.
+
+Count how many followers each user has.
+
+List users who never received a comment.
+
+Find users with more than 100 likes across all posts.
+
+Show users who liked a post and followed the author.
+
+Find users who commented on at least 5 different posts.
+
+List post IDs and the number of unique users who liked them.
+
+Find which user has the highest number of followers.
+
+Display number of users each user follows.
+
+Show the average number of comments per post.
+
+Get the post with maximum likes.
+
+List users who follow at least one person but aren’t followed by anyone.
+
+Display posts which received both comments and likes.
+
+Show users who liked and commented on the same post.
+
+List users who liked more than 10 different posts.
+
+Count total posts, comments, and likes in the system.
+
+Show users who have liked posts but never posted.
+
+Get all comments made in 2024 grouped by month.
+
+List users and the number of comments received on their posts.
+
+Display username and total likes received on all their posts.
+
+Find the post that got the most comments.
+
+List users with comments containing the word “awesome”.
+
+Get users who commented on their own posts more than once.
+
+Show count of mutual followers per user.
+
+Display each user’s average caption length.
+
+List users with more likes than followers.
+
+Show all usernames who have liked more than they’ve posted.
+
+List all users who are not following anyone.
+
+Find all posts with more than 3 comments and 10 likes.
+
+Show number of users who follow “john123”.
+
+Display the usernames of users whose posts never received comments.
+
+Find users who liked their own posts and also commented on them.
+
+Show average time between a user’s posts.
+
+List posts with more than 2 comments made by the same user.
+
+Count how many users follow someone but don’t get followed back.
+
+Show all comments with corresponding post caption and commenter.
+
+List all users with more comments than posts.
+
+Get the total likes received per month across the entire platform.
+
+Find users whose comments average more than 20 words.
+
+List top 3 users by total number of likes received.
+
+Find the post that received likes from the most unique users.
+
+Show users who liked every post they commented on.
+
+Find usernames of users who liked more than 3 posts in one day.
+
+Display the earliest comment for each post.
+
+List each user and their most liked post.
+
+Find users who have made exactly one post and no likes.
+
+List users whose posts received more comments than likes.
+
+Get total likes by user for each post they authored.
+
+Find posts liked and commented by more than 10 users.
+
+Get average comments per user across all their posts.
+
+List usernames who followed others but were never followed back.
+
+Get posts with highest average like per day since creation.
+
+Find users who follow back everyone who follows them.
+
+List usernames where the user has more likes than the people they follow.
+
+Get number of users whose posts were never liked.
+
+Show the most commented post of each month.
+
+Get top 10 posts with most combined likes + comments.
+
+Show which user liked the most posts in June 2024.
+
+Find comments where the commenter is not the follower of the post’s author.
+
+List the post IDs that have at least 3 comments from the same user.
+
+Show usernames of users who only follow one person.
+
+List users who received likes but never commented.
+
+Get total count of interactions per user (likes + comments).
+
+Show users who interacted with every post by user ‘admin’.
+
+List usernames who have no interactions (likes, posts, or comments).
+
+Get users whose last post has more than 5 comments.
+
+Display each user’s top 3 posts by number of likes.
+
+Get usernames with the most active followers (by interaction).
+
+Find all users with average likes greater than 5 on their posts.
+
+Show usernames who commented on more than 10 unique posts.
+
+List post IDs that got liked and commented within 1 hour.
+
+Show users with >10 followers and <3 posts.
+
+Find mutual follower pairs.
+
+Show top 5 users by average engagement rate.
+
+List all users who never received a like from their followers.
+
+Display usernames of users who follow only people with 10+ followers.
+
+Get usernames whose posts have total interaction count above 100.
+
+✅ SQL Practice Questions 201–300
+Find all users who never posted a photo.
+
+List users who follow someone but were never followed back.
+
+Show users who liked every post made by user john123.
+
+Find posts that received more likes than the average likes per post.
+
+List users who never received a single comment on their posts.
+
+Display usernames of users who liked their own posts.
+
+Get usernames who liked posts from users they don’t follow.
+
+Find users who commented on posts they never liked.
+
+Show posts commented on by users who never posted anything.
+
+Find posts that received comments only from the author’s followers.
+
+Get users who follow someone that has more than 20 followers.
+
+Find usernames of users who are followed by every other user.
+
+List users whose posts were liked only by users they follow.
+
+Show users who have liked more than one post by the same person.
+
+Display users who commented on posts that were posted in 2023.
+
+Find comments made on posts that have never been liked.
+
+List users who liked more posts than they commented on.
+
+Get usernames of users who never received any likes or comments.
+
+Show users who follow people who don’t follow them back.
+
+List posts that were never liked or commented on.
+
+Find users who received more likes from strangers than followers.
+
+Show the most liked post per user using a subquery.
+
+List users whose posts were only liked by a single user.
+
+Display posts where all commenters are also followers of the author.
+
+Find usernames who have commented on every post by user admin.
+
+Show users who liked posts that contain the word 'sunset'.
+
+List users who have both commented and liked the same post.
+
+Find posts that received more likes than the user’s average post likes.
+
+Display usernames of users who never followed anyone.
+
+Get users who posted more than any of their followers.
+
+Show posts where at least one comment is by a non-follower.
+
+List users who are not followed by anyone, but follow at least one user.
+
+Find usernames of users who only liked their own posts.
+
+Display users who commented but never followed anyone.
+
+Show usernames that follow more than one user who never posted.
+
+Get usernames who received likes from people they don’t follow.
+
+Show users who commented on every post they liked.
+
+Find users whose most recent post has no likes.
+
+Show users who only follow users with more posts than them.
+
+List usernames of users who only commented on one post.
+
+Display posts that were liked and commented by the same user.
+
+Find users who liked posts with the most comments.
+
+List users who only commented on posts created before 2024.
+
+Show usernames of users who never liked a post after Jan 1, 2025.
+
+Display users whose followers liked none of their posts.
+
+Find usernames of users who commented but never received a comment.
+
+Get usernames who liked every post they commented on.
+
+List users whose last comment was on their own post.
+
+Display usernames of users who liked posts in more than 3 different months.
+
+Show all posts created by users who joined in the last 6 months.
+
+Find all comments on posts that received less than 3 likes.
+
+Get usernames who liked 5 or more posts by the same user.
+
+Show users who received more comments than any of their followers.
+
+Display posts that were liked by all users who follow the author.
+
+Find users whose posts were never liked by anyone outside their followers.
+
+List all comments from users who are not following the post’s author.
+
+Show users who follow only users they’ve liked posts from.
+
+Find usernames of users who never liked a post in 2023.
+
+Display posts created by users who never commented.
+
+Get users who liked at least one post that received no comments.
+
+Show usernames of users who liked a post and commented on another post within 1 hour.
+
+Find users who follow more users than the number of posts they have.
+
+List users whose last comment was on a post they liked.
+
+Show posts liked by users who joined after the post was created.
+
+Find all users who liked only posts created in 2024.
+
+List all usernames who followed someone but never interacted.
+
+Get comments made by users who joined in the same year as the post author.
+
+Show users who liked posts of at least 3 users they don’t follow.
+
+Display usernames of users who follow and interact with only 1 person.
+
+Find all posts that received no interactions within 7 days of creation.
+
+List users who posted more than any user they follow.
+
+Show users who have only liked posts with more than 5 comments.
+
+Get posts where every like is from someone who joined before 2024.
+
+Find users who liked posts but only those created by users with fewer followers than them.
+
+Display usernames of users who follow only those who follow them back.
+
+Show users who liked every post made in 2024.
+
+List users who never received any interaction from the users they follow.
+
+Find usernames of users who interacted on all posts that contain 'trip'.
+
+Show all users who posted, liked, and commented on the same day.
+
+Get usernames whose posts were only liked by 1 person multiple times.
+
+Find all usernames who commented but never liked or posted.
+
+Display users who commented on posts of users with no followers.
+
+Get users who liked more than 2 posts within an hour.
+
+Show usernames whose comments are longer than average post captions.
+
+List usernames of users who only follow users from a certain signup month.
+
+Get comments made by users whose posts were never liked.
+
+Show users who posted on the same day they joined.
+
+Display users whose likes are only on weekend posts.
+
+Find usernames who only liked and commented on trending posts (10+ likes).
+
+Get all usernames who followed a person and interacted with their post within 24 hrs.
+
+Show users who only liked posts with 'travel' and 'food' in caption.
+
+Find posts that were commented on by users with no followers.
+
+List users who only followed those who signed up in 2024.
+
+Display usernames of users who interacted with all posts created in June 2024.
+
+Find posts created by users who interacted with every post they follow.
+
+List all users who never posted, never liked, and never commented.
+
+Get all users who followed someone they interacted with the same day.
+
+Show usernames who only liked posts from one user.
+
+Display users who only interacted during nighttime (8PM–6AM).
+
+List usernames of users who interacted with 3 or more posts on the same topic.
+
+✅ SQL Practice Questions 301–400
+Assign row numbers to each user ordered by signup date.
+
+Rank users based on total likes received on their posts.
+
+Use DENSE_RANK() to assign rank to users by comment count.
+
+Show LEAD() of each user’s last post timestamp.
+
+Use LAG() to find time gap between user’s consecutive posts.
+
+Get top 3 most liked posts per user using ROW_NUMBER().
+
+Display users ranked by follower count within each signup year.
+
+Use RANK() to order users by number of comments posted.
+
+Partition posts by user and order them by likes descending.
+
+Use NTILE(4) to group users into engagement quartiles.
+
+Display posts with their previous and next post time (LAG, LEAD).
+
+Show difference in likes between a user’s current and previous post.
+
+Assign row numbers to comments per post.
+
+Rank posts by number of interactions (likes + comments).
+
+List top 5 commenters per post using RANK().
+
+Use CUME_DIST() to show distribution of followers across users.
+
+Use PERCENT_RANK() to evaluate user activity percentile.
+
+List all posts where user has more likes than previous post.
+
+Calculate cumulative total likes for each user over time.
+
+Use LAG() to track changes in user’s follower count over time.
+
+List users whose engagement rank improved week over week.
+
+Rank users by daily post count (partition by day).
+
+Find posts with above-average engagement compared to last post.
+
+Assign rank to users by average comment length.
+
+Get top 3 most active users by interactions per week.
+
+For each post, show how many days passed since last one.
+
+List top 2 followed users per month joined.
+
+Show rolling sum of likes over a user’s last 3 posts.
+
+Calculate average time between a user’s posts.
+
+Find longest posting gap for each user.
+
+Rank users by number of people they follow.
+
+Rank comments per post in order of timestamp.
+
+Show user’s cumulative comment count over time.
+
+Use NTILE(5) to divide posts into popularity buckets.
+
+Find difference in number of comments from previous post.
+
+Rank users within each city by total post count.
+
+Show top 5 users by comments per month.
+
+Assign engagement score rank per post and show trend.
+
+Calculate post streaks (consecutive days with posts).
+
+Show follower growth rank for users weekly.
+
+Rank posts within each day by number of likes.
+
+Use LEAD() to show time until next comment on a post.
+
+Identify users whose post frequency decreased.
+
+Rank each user's posts by caption length.
+
+Show daily rank of most liked posts.
+
+For each user, get previous comment’s word count.
+
+Rank users by time-to-first-like on their posts.
+
+Show comments that improved in length over time.
+
+Get top 3 liked posts per week for the platform.
+
+Assign row number to each user interaction event.
+
+Use LAG() to detect user inactivity periods.
+
+Track movement in weekly rank of users by engagement.
+
+Use LEAD() to forecast next comment count.
+
+Rank user’s top 2 followers by mutual interactions.
+
+Assign engagement tiers using NTILE.
+
+Find difference between first and last post timestamps.
+
+Rank users by day they hit 1000 likes.
+
+Use CUME_DIST() for engagement across posts.
+
+Rank comments by time of day.
+
+Assign row numbers to likes received per hour.
+
+List daily top 5 engaged users.
+
+Rank captions by word count.
+
+Use LAG() to detect comment deletion events.
+
+Show ranking trend of posts with highest daily interactions.
+
+Track cumulative likes day over day per user.
+
+Assign time slot ranking per user activity (morning, evening, etc.).
+
+Find week-over-week increase in user post count.
+
+Rank post engagement ratio (likes/comments).
+
+Get top 3 followed users within each user’s region.
+
+Track streaks in daily logins per user.
+
+Use ROW_NUMBER() to find every user’s first post.
+
+Find drop in like counts using LAG().
+
+Rank the most consistent commenters by post frequency.
+
+Track the time gap between comments on different posts.
+
+Get top 10 most shared posts by rank.
+
+Show RANK() of users based on net engagement.
+
+Use LEAD() to show what post comes after a high-performing one.
+
+Rank hashtags by popularity in captions.
+
+Rank users by number of hashtags used.
+
+Find the most interactive day for each user.
+
+Assign row numbers to all interactions chronologically.
+
+Detect sudden increase in post frequency using LAG().
+
+Show user comment streaks using window functions.
+
+Rank daily top 3 new followers by user.
+
+Calculate previous and next like counts for each post.
+
+Use window functions to detect performance dips.
+
+Use NTILE to assign users to activity brackets.
+
+Rank users by like/comment ratio.
+
+Show previous post engagement and current post comparison.
+
+Use LEAD() to suggest optimal posting time based on trend.
+
+Assign rankings by net growth of followers.
+
+Detect trending users by sudden rise in interaction rank.
+
+Rank users by percentage of mutual followers.
+
+Calculate change in comment volume across posts.
+
+Use ROW_NUMBER() to find earliest daily user activity.
+
+Track time between a user’s last two posts.
+
+Assign daily post popularity rank across all users.
+
+Show top performing posts over a rolling 7-day window.
+
+Track comment length growth trend per user using LAG().
+
+Rank users by minimum interaction delay (time from post to first like).
+
+✅ SQL Practice Questions 401–500
+Show a user’s profile including follower count, following count, and post count.
+
+List the top 5 most liked posts each day.
+
+Show users who received more likes than they gave.
+
+Find users who followed someone and liked their post the same day.
+
+List posts with the highest interaction rate (likes + comments / time).
+
+Get average response time to a post (first comment timestamp - post time).
+
+Display trending posts from the last 7 days (10+ likes & 5+ comments).
+
+Simulate an activity feed: latest posts from users you follow.
+
+Get the user who gained the most followers in a week.
+
+List posts with comments by non-followers.
+
+Show followers who interacted (liked or commented) within 1 hour of following.
+
+Identify ghost followers (users who follow but never like/comment).
+
+Show a summary of a post: likes, comments, and average engagement delay.
+
+Display top 3 posts with most interactions for each user.
+
+Show all posts shared on a Sunday by users who signed up in 2024.
+
+List users who liked all posts from a particular hashtag.
+
+Find the best time to post for each user (based on past likes/comments).
+
+Identify top 5 users whose followers are most interactive.
+
+Display last activity (like/comment/post) of each user.
+
+Create a leaderboard of users by total engagement (likes+comments received).
+
+Show a "mutual followers" list for each user.
+
+List users who received a comment within 5 minutes of posting.
+
+Find posts that were never liked or commented on.
+
+List users who followed but never engaged.
+
+Show users whose last 3 posts had decreasing engagement.
+
+Identify influencers (users with >1000 followers and high avg engagement).
+
+Create a daily digest of all new posts and their interactions.
+
+Identify posts that went viral (10x more engagement than user average).
+
+Show likes from users in the same city as the post author.
+
+Find users who only follow users from their own signup batch (month).
+
+Simulate the "Explore" page: posts with high engagement but not from followed users.
+
+List users whose followers liked none of their posts.
+
+Generate top hashtags by usage and interaction.
+
+Show posts that received first interaction within 1 minute.
+
+Identify inactive users: no post, like, or comment in last 60 days.
+
+Show comments with the highest word count.
+
+List users whose every post received at least one comment.
+
+Simulate user’s dashboard showing post history + total reach.
+
+Display how many users interacted with a post within 24 hours.
+
+List all new interactions for a post (last 7 days).
+
+Find posts that crossed 100 interactions in first 2 hours.
+
+Identify comments made after 10 PM on weekdays.
+
+Show user engagement patterns by time-of-day.
+
+Detect top-engaging follower per user.
+
+Find users who both follow and have been followed by more than 50 users.
+
+Show top daily posters over the last month.
+
+Identify micro-influencers (followers 100–500 + good engagement rate).
+
+Show user activity spike (when user posted 3+ times in one day).
+
+Generate a report of total likes, comments, and follows per user.
+
+List users who joined in 2024 but never interacted with any content.
+
+Find the best performing post per category (e.g., travel, food).
+
+List most used captions across all users.
+
+Show top commenters who comment on different users regularly.
+
+Identify the most consistent posters (posts at same time each day).
+
+Find user pairs that follow each other and always like each other’s posts.
+
+Create a "who liked my post first" history for each user.
+
+Generate a timeline view of one user’s full activity.
+
+List all users who never received a like from the users they follow.
+
+Identify users who liked 3+ posts in less than 10 minutes.
+
+Show all posts that never got a comment but were liked.
+
+Display which follower interacted the most with a user's posts.
+
+Get all comments that were replied to within 1 minute.
+
+Create a map of user engagement by weekday.
+
+Identify bots: users who follow 100+ but have no likes/comments.
+
+Show comment trends over the past 6 months per topic/hashtag.
+
+Detect follow-unfollow patterns (user who followed and unfollowed frequently).
+
+Show user-to-user interaction networks (who likes/comments on whom).
+
+Find top 5 most interactive users in a specific time window.
+
+Simulate story engagement: who viewed/liked/commented in <24 hours.
+
+Get caption engagement ratio (interactions per 10 words).
+
+Detect spam behavior (commenting same message multiple times).
+
+List all users with >20 comments in a single day.
+
+Show interactions for all users who joined from mobile.
+
+Generate a “relationship map” of interactions between user pairs.
+
+Display like-to-follower ratio per post.
+
+List all users who have consistent engagement over months.
+
+Identify top users who engage across a wide variety of topics.
+
+Show weekly interaction trends per user.
+
+Display top liked post per day for last month.
+
+Detect fast viral posts (20+ likes in first 15 minutes).
+
+Show average time taken to get the first like per post.
+
+List users whose posts peak in engagement after 24 hours.
+
+Show who commented multiple times on same post.
+
+Identify content that was both highly liked and commented.
+
+Generate stats of weekend vs weekday interactions per user.
+
+Get all users whose content performs better on weekdays.
+
+Show a log of user growth per day (followers added).
+
+Find all posts where >50% comments come from followers.
+
+Identify slow burners: posts that get steady interaction over days.
+
+Detect time zones based on interaction timing patterns.
+
+Show all users whose follower count is growing linearly.
+
+Identify users whose interactions spike during events (e.g., holidays).
+
+Get all interactions by followers from a certain region.
+
+Rank posts by average engagement delay (time to 1st interaction).
+
+Find all users who never liked a post from the same user twice.
+
+Get all hashtags with sudden spikes in popularity.
+
+Identify followers who like before commenting consistently.
+
+Simulate a notification system: all activities on user’s content.
+
+Detect influencers with high conversion (follow after liking).
+
+Show all mutual followers who interacted in last 30 days.
+
+✅ SQL Practice Questions 501–600
+Use EXPLAIN to analyze a basic SELECT query on the posts table.
+
+Compare performance of SELECT * vs column-specific SELECT.
+
+Create an index on user_id in the posts table.
+
+Identify missing indexes for JOIN operations.
+
+Use EXPLAIN to evaluate a JOIN on users and followers.
+
+Analyze query plan for fetching top liked posts per user.
+
+Add composite index on (user_id, created_at) and test performance.
+
+Use EXPLAIN to compare indexed vs non-indexed queries.
+
+Detect full table scans in a query using EXPLAIN.
+
+Create an index to optimize post search by caption keyword.
+
+Profile a slow query fetching followers per user.
+
+Add INDEX on post_id for the likes table.
+
+Use EXPLAIN ANALYZE to monitor execution time of subqueries.
+
+Optimize query that fetches recent posts for each user.
+
+Add UNIQUE INDEX on username to prevent duplicates.
+
+Use EXPLAIN on a query involving ORDER BY + LIMIT.
+
+Compare INNER JOIN vs EXISTS using performance stats.
+
+Write a query that uses a covering index.
+
+Detect query bottlenecks using SHOW STATUS.
+
+Use slow query log to find top 3 slowest queries.
+
+Analyze and optimize query fetching top commenters per day.
+
+Create an index to speed up time-based filters (WHERE created_at > NOW() - INTERVAL 1 DAY).
+
+Use FORCE INDEX to override optimizer’s default plan.
+
+Analyze impact of indexing LOWER(username) for case-insensitive search.
+
+Use index hints (USE INDEX, IGNORE INDEX) to fine-tune plans.
+
+Identify queries doing full scans on the comments table.
+
+Use EXPLAIN to analyze nested subqueries.
+
+Optimize query that aggregates interaction count over last 30 days.
+
+Profile a query using SHOW PROFILE for CPU/I/O bottlenecks.
+
+Compare IN vs JOIN with performance data.
+
+Rewrite a query to use indexed fields and measure performance gain.
+
+Detect redundant indexes using SHOW INDEX FROM.
+
+Write a query to detect unused indexes.
+
+Compare LIMIT with/without WHERE filters for large datasets.
+
+Benchmark full scan vs index scan on posts.caption LIKE '%travel%'.
+
+Tune a query with multiple OR conditions using indexes.
+
+Use OPTIMIZE TABLE on posts after massive DELETE.
+
+Identify best index strategy for followers(user_id, followed_id).
+
+Analyze effect of too many indexes on INSERT performance.
+
+Optimize top-N queries using indexes and derived tables.
+
+Design index for fetching top 5 most active users.
+
+Compare indexing created_at alone vs combined with user_id.
+
+Tune a query fetching interactions by hashtag.
+
+Analyze performance impact of DISTINCT on large tables.
+
+Use EXPLAIN to analyze GROUP BY + HAVING clauses.
+
+Create a partial index on active users only.
+
+Compare table scan vs index scan on comments.text LIKE '%awesome%'.
+
+Show query using composite index vs multiple single indexes.
+
+Use ANALYZE TABLE to update index statistics.
+
+Find queries affected by poor cardinality.
+
+Compare performance: UNION vs UNION ALL.
+
+Measure impact of clustering index vs non-clustered.
+
+Use caching and test query latency before/after.
+
+Rewrite query to avoid correlated subqueries.
+
+Benchmark LEFT JOIN vs NOT EXISTS for anti-joins.
+
+Use SHOW STATUS LIKE 'Handler%' to detect table scans.
+
+Find queries that can't use indexes due to OR conditions.
+
+Optimize reporting query using indexed views or materialized tables.
+
+Design indexes for a news feed query (latest posts by followed users).
+
+Use BINARY in WHERE clause and analyze performance.
+
+Add FULLTEXT index for searching captions.
+
+Detect and eliminate duplicate indexes.
+
+Analyze query using LIMIT OFFSET vs keyset pagination.
+
+Create hash index for fast lookup by email.
+
+Tune query that joins 4+ tables and aggregates.
+
+Add prefix index on caption field and analyze lookup speed.
+
+Rewrite query to use EXISTS instead of IN.
+
+Profile heavy JOIN with indexes on both sides.
+
+Use EXPLAIN to find which step in query is slowest.
+
+Profile query with derived table + GROUP BY.
+
+Add bitmap index (if supported) and compare results.
+
+Test performance of HAVING COUNT(*) > 5 with index.
+
+Add BTREE index and compare plan for range queries.
+
+Benchmark query before and after denormalization.
+
+Optimize WHERE id NOT IN (...) with indexed join.
+
+Use filtered indexes (WHERE is_active = true).
+
+Tune slow analytics query using temp table + indexes.
+
+Benchmark JOIN + GROUP BY with multiple indexes.
+
+Create execution plan for a timeline feed query.
+
+Track query cache hit/miss rate before and after.
+
+Analyze multi-column sort performance with ORDER BY.
+
+Check fragmentation level of indexes and fix.
+
+Add index to support composite WHERE a = ? AND b > ?.
+
+Optimize recursive CTE (if supported).
+
+Benchmark insertion time with and without indexing.
+
+Measure effect of indexing on disk space usage.
+
+Monitor query time after changing buffer pool size.
+
+Use SHOW PROCESSLIST to detect long-running queries.
+
+Compare clustered index on id vs created_at.
+
+Tune a query that filters, sorts, and limits results.
+
+Use STR_TO_DATE + index combo to speed up date parsing.
+
+Rewrite a multi-join report query for better performance.
+
+Optimize full outer join (if supported or simulated).
+
+Use HAVING COUNT(DISTINCT ...) with proper indexing.
+
+Compare single-column and composite indexing in multi-join case.
+
+Track how a query performs as data grows (simulate volume).
+
+Create report on query latency using logs.
+
+Compare performance of derived vs temp table for analytics.
+
+Tune a LIKE '%keyword%' search using trigram/fulltext.
+
+Use EXPLAIN FORMAT=JSON to deeply inspect execution steps.
+
+✅ SQL Practice Questions 601–700
+Create a users table with primary key, unique email, and created_at.
+
+Create a posts table with foreign key to users(id).
+
+Alter users table to add is_active column (BOOLEAN).
+
+Drop column middle_name from users.
+
+Rename table posts to user_posts.
+
+Create a table for likes with composite primary key (user_id, post_id).
+
+Add NOT NULL constraint to username in users.
+
+Add CHECK constraint for age > 13 in users.
+
+Create table followers to track who follows whom with self-referencing foreign keys.
+
+Write a TRIGGER that updates last_active on user login.
+
+Create a table with default value for signup_source.
+
+Add foreign key from comments to posts(id) with ON DELETE CASCADE.
+
+Write a TRIGGER to prevent inserting posts with empty captions.
+
+Drop foreign key from likes table.
+
+Modify posts to add edited_at column with default NULL.
+
+Write a TRIGGER that updates edited_at on post update.
+
+Create a table hashtags and a many-to-many join table post_hashtags.
+
+Add a constraint to limit post caption to 300 characters.
+
+Write SQL to create an index on email column in users.
+
+Create a table for story_views with timestamps.
+
+Alter table comments to add status ENUM('active', 'deleted').
+
+Create TRIGGER that logs deleted comments into a backup table.
+
+Create schema archived and move old posts to it.
+
+Add created_by to all tables referencing users.
+
+Prevent duplicate comments using a UNIQUE constraint.
+
+Add a column to track versioning on posts.
+
+Add a TRIGGER to auto-increment a version field on every update.
+
+Create table reactions with constraint to allow only emoji or short text.
+
+Create a view user_summary with total posts, likes, and followers.
+
+Add index on post.created_at for faster queries.
+
+Create partitioned table posts_2024, posts_2025 for year-wise data.
+
+Use CHECK to ensure post length > 10 characters.
+
+Drop index from comments table.
+
+Rename column bio to profile_bio.
+
+Add generated column like_score = likes * 10.
+
+Create TRIGGER to notify on new follower (insert into log).
+
+Add a column to count number of login failures.
+
+Restrict number of hashtags per post using a TRIGGER.
+
+Add a TRIGGER to restrict more than 10 posts per day.
+
+Create table reports with foreign keys to posts and users.
+
+Write DDL for user table that supports OAuth (Google ID, Facebook ID).
+
+Add column timezone to users and default it to UTC.
+
+Drop table archived_followers if exists.
+
+Rename database social_platform to social_app.
+
+Create TRIGGER to log all delete actions in a separate table.
+
+Add constraint to ensure every post has at least one hashtag.
+
+Create a view of most active users in last 30 days.
+
+Use TRIGGER to check for banned words in captions.
+
+Add full-text index to caption column.
+
+Write SQL to export schema to a .sql file.
+
+Create event_log table to track any INSERT on any table.
+
+Add constraint for one comment per user per post.
+
+Alter followers table to ensure no one can follow themselves.
+
+Create a stored procedure to archive old posts.
+
+Write SQL to enforce max 500 characters in comments.
+
+Add created_by trigger for audit logging on posts.
+
+Create a default admin user using DDL.
+
+Restrict updates to certain columns with BEFORE UPDATE trigger.
+
+Write a trigger to block new posts between 2AM–3AM.
+
+Use ENUM for user roles: 'user', 'admin', 'moderator'.
+
+Prevent posts from banned users using TRIGGER.
+
+Add a computed column for post score = likes + 2 * comments.
+
+Create materialized view (if supported) for feed generation.
+
+Write a procedure to reset inactive user passwords.
+
+Add a uniqueness constraint on (user_id, story_date).
+
+Modify users to store login count and update via trigger.
+
+Create an archive table for old comments.
+
+Write a DDL script for backing up all table structures.
+
+Add constraints to enforce country codes in +XX format.
+
+Add TRIGGER to capture who deleted what and when.
+
+Drop bio column only if it exists.
+
+Write a rule to auto-delete posts older than 3 years (if supported).
+
+Restrict simultaneous likes from same IP in < 2 seconds using TRIGGER.
+
+Create login_history table and log logins via trigger.
+
+Write SQL to enforce 2FA enabled for admins.
+
+Add check constraint to disallow usernames like ‘admin’, ‘root’.
+
+Modify posts to add post_type column (text, image, video).
+
+Track number of times a post is edited.
+
+Create view top_influencers with 1000+ followers & high engagement.
+
+Add index on followers (follower_id, followed_id) for bidirectional lookup.
+
+Remove obsolete table user_preferences.
+
+Create a TRIGGER that updates user last_comment_time.
+
+Add NOT NULL to caption and default to ''.
+
+Write SQL to enforce foreign key constraints across 4 tables.
+
+Modify email column to make it case-insensitive.
+
+Track posts deleted by each admin.
+
+Add column platform to users to record device type.
+
+Rename ENUM values using ALTER TYPE (if supported).
+
+Add constraint to reject caption containing phone numbers.
+
+Create index on created_at DESC for fast latest fetch.
+
+Simulate a trigger for “consecutive login days” count.
+
+Remove a default value from signup_source.
+
+Enforce one post per user per hour rule using TRIGGER.
+
+Create archived_users table with matching schema.
+
+Add stored function to calculate user engagement score.
+
+Set auto increment starting at 100000 for post ID.
+
+Add constraint: a post must be liked at least once in 24 hours.
+
+Use TRIGGER to prevent comment edits after 1 hour.
+
+Drop all constraints from followers table.
+
+Add check to ensure email is from allowed domain list.
+
+✅ SQL Practice Questions 701–800
+Create a CTE to get the top 3 posts per user by likes.
+
+Write a CTE that ranks users by total engagement in the last 7 days.
+
+Use a CTE to find users who haven't posted in the last 30 days.
+
+Create a CTE that computes cumulative likes per user over time.
+
+Use recursive CTE to find all followers of a user (multi-level).
+
+Write a recursive CTE to traverse comment threads.
+
+Create a monthly report of posts, likes, and comments per user.
+
+Use CTE to filter users with at least 5 posts in the last 7 days.
+
+Build a view that shows a summary of user activity.
+
+Write a report showing post count per user with % growth week-over-week.
+
+Use multiple CTEs to isolate top posts, users, and hashtags.
+
+Create a CTE that joins post, likes, and users to compute score.
+
+Generate a leaderboard view of most followed users.
+
+Build a report showing comment frequency by hour.
+
+Write a recursive query to find mutual followers across 3 levels.
+
+Use a CTE to compute engagement drop over 3 most recent posts.
+
+Create a rolling 7-day report of interactions per user.
+
+Create a view of posts with their hashtag summary.
+
+Use a CTE to count the number of comments per post per day.
+
+Build a view showing the average comment length per user.
+
+Use a recursive CTE to calculate post reply depth.
+
+Create a view to find the most common posting time per user.
+
+Generate a report of average likes for each day of week.
+
+Write a CTE to tag users as "new", "active", or "dormant".
+
+Create a view showing the last 3 posts per user.
+
+Use a CTE to compute moving average of likes for each post.
+
+Create a report showing which posts were liked within 1 hour of posting.
+
+Build a CTE to detect users who unfollowed after following.
+
+Generate a report of post frequency by user role.
+
+Create a daily dashboard report view.
+
+Build a CTE to find users who always post on weekends.
+
+Create a view showing hashtag popularity over time.
+
+Write a CTE to identify repeat commenters on a post.
+
+Generate a report of user retention per week after signup.
+
+Use a recursive CTE to count how many times a user’s post was reshared.
+
+Create a view of users who gain more than 10 followers per day.
+
+Build a CTE to compute growth rate of comments per user.
+
+Write a query to show top 5 comments per post using CTE.
+
+Generate an interaction funnel view (views → likes → comments).
+
+Create a report of daily new users and their first activity.
+
+Create a view of posts with average engagement time (first like + comment).
+
+Use CTE to calculate the longest comment streak per user.
+
+Create a recursive view to show comment reply chains.
+
+Generate a report comparing post engagement per device.
+
+Create a view of users who got no likes in last 5 posts.
+
+Use a CTE to calculate net new followers for each user per week.
+
+Generate a summary report of post reach (likes + shares + views).
+
+Create a view showing all followers who haven’t liked any post.
+
+Use CTE to calculate average delay before first comment per post.
+
+Build a time-series report of post count per category per day.
+
+Write a CTE to find trending users in the last 24 hours.
+
+Create a view that summarizes user activity heatmap (day × hour).
+
+Use recursive CTE to simulate hierarchical tag categories.
+
+Create a view for the engagement ratio (likes/comments) over time.
+
+Use CTE to simulate daily notification counts per user.
+
+Create a report comparing weekday vs weekend engagement.
+
+Build a view to summarize posts deleted within 24 hours.
+
+Use CTEs to generate top 3 most engaged posts for every hashtag.
+
+Create a monthly summary of new users, posts, and interactions.
+
+Build a report showing the average number of followers gained per post.
+
+Use a CTE to find users with at least 3 inactive weeks.
+
+Create a view of most commented hashtags.
+
+Build a CTE that flags accounts with no bio, no posts, and no activity.
+
+Write a report showing the fastest growing hashtags.
+
+Use recursive CTE to find the longest comment reply chain.
+
+Create a view for followers gained/lost each week.
+
+Generate a report on posting patterns by geography.
+
+Use CTE to tag posts as "low", "medium", or "viral" based on engagement.
+
+Create a view of interactions from users with <100 followers.
+
+Build a report showing user engagement by time of day.
+
+Use CTE to extract users with spike in activity in a short time.
+
+Generate a daily report for admin showing moderation stats.
+
+Create a view showing number of comments deleted per moderator.
+
+Build a CTE that tags inactive followers.
+
+Generate a report of the most engaged user pairs.
+
+Use CTEs to simulate user interaction flow across 3 steps.
+
+Create a view of the longest post captions each week.
+
+Use a CTE to count number of interactions per device type.
+
+Generate a view of post lifecycle from publish to max engagement.
+
+Create report of highest engagement per weekday and hour.
+
+Build a report comparing average likes per post by gender.
+
+Create a view to show new users who became influencers within 60 days.
+
+Use CTE to track ratio of likes-to-comments evolution over 3 months.
+
+Build report of average likes received per new follower.
+
+Create a view of user activity compared to their followers.
+
+Generate monthly leaderboard per category (tech, art, fitness).
+
+Use a CTE to simulate an alert system for inactive users.
+
+Create report of average caption length by engagement level.
+
+Create a recursive view of multi-level hashtag use.
+
+Use a CTE to find reposts based on caption similarity.
+
+Build a summary view of engagement by account age.
+
+Create a report of reactions per content type (image, video, text).
+
+Use CTEs to track likes and comments trend over last 5 posts.
+
+Create a view for tracking multi-post campaigns (posted over several days).
+
+Write a report for moderators showing flagged posts per user.
+
+Build a leaderboard of most mentioned users in captions/comments.
+
+Create a time-series view of likes/comments per city.
+
+Use a CTE to detect content recycling (same post multiple times).
+
+Create a report for engagement peaks by time of week.
+
+Build a dashboard view for daily platform stats (DAU, posts, likes).
+
+✅ SQL Practice Questions 801–900
+Write a query to find the second highest liked post per user.
+
+Given posts and likes, find the first user to like each post.
+
+Design a query to get the "Top 3 friends who interact the most" per user.
+
+From the comments table, get the most frequent commenter per post.
+
+Create a feed query to show top 5 posts per followed user (ordered by time).
+
+List users whose followers never liked any of their posts.
+
+From given follows, likes, and posts, find who influences whom the most.
+
+Simulate user churn: users inactive for 30+ days post-registration.
+
+Find posts that received more likes from strangers than followers.
+
+Create a summary of total likes per user over last 6 months.
+
+Identify users who posted daily for the longest streak.
+
+Design SQL to simulate email notifications: all new likes since last login.
+
+Query for finding posts that were liked and then unliked.
+
+Design query for "people you may know" based on 2nd-degree connections.
+
+Get all users who followed and unfollowed the same person multiple times.
+
+Detect comment patterns that resemble spam (e.g., repeated messages).
+
+Given a login_log, find average login interval per user.
+
+Write SQL to find most viral posts based on fastest engagement rise.
+
+Simulate trending hashtag report (based on velocity of new usage).
+
+Identify users whose captions are plagiarized (based on similarity).
+
+Generate content ranking: likes + comments + engagement velocity.
+
+Detect suspicious activity: likes on 100+ posts within 5 minutes.
+
+From user interactions, simulate an engagement score per follower.
+
+Determine time of day when user gets most interactions.
+
+Create report to show who liked the most posts without commenting.
+
+Build query to track top viewed stories that weren’t liked/commented.
+
+Detect "influencer fatigue" (decreasing engagement despite more followers).
+
+Identify followers who never engaged in the last 3 months.
+
+Write a query for a follow-back recommendation engine.
+
+Track caption editing frequency and its impact on performance.
+
+Design query to show inactive users who still receive engagement.
+
+Simulate a real-time notification feed using likes, comments, follows.
+
+Write a ranking query to show weekly change in engagement rank per user.
+
+Design a summary showing average interactions by post length.
+
+Identify first 10 users to comment after every post.
+
+Find users who interact mostly with a single other user (bias detection).
+
+Generate weekly trending posts report using time window logic.
+
+Simulate user resume: total content, engagement, and last 5 actions.
+
+Determine when a hashtag peaked based on usage frequency.
+
+Query for users with sharp follower growth over a short window.
+
+Detect coordinated engagement groups (users who like same posts repeatedly).
+
+Find accounts that act like bots (follow, like, unfollow patterns).
+
+Create time-bucketed interaction graph (day vs hour vs action).
+
+Write a CTE-based query to generate user growth curve.
+
+Build a campaign performance report (e.g., during events).
+
+Rank users based on how often their content appears in top 10.
+
+Identify content overlap (same hashtags, same users) across different posts.
+
+Create rolling 3-day engagement summaries per user.
+
+Simulate a search suggestion engine for hashtag autocomplete.
+
+Query to compare post frequency across different days of the week.
+
+Build query to count content violations flagged per moderator.
+
+Determine which users consistently post at the same time.
+
+Track interaction drop after a user changes posting time.
+
+Build anomaly detector: sudden drop in likes after consistent trend.
+
+Find users who interact with new users most frequently.
+
+Create a dashboard showing platform health (daily actives, retention).
+
+Query to detect top 5 growing micro-influencers each week.
+
+Write SQL to show interactions where comments came before likes.
+
+Simulate follower conversion funnel: views → follows → engagement.
+
+Create interaction map per user: who interacts most with whom.
+
+Detect ghost content: posts with views but no engagement.
+
+Identify timezones of users based on activity patterns.
+
+Simulate "who viewed my post" with geo & time breakdown.
+
+Track which device is used most often for posting.
+
+Write query to show active time ranges for each user.
+
+Identify best weekday for engagement for each user.
+
+Build interaction summary by region, platform, and time.
+
+Track users who frequently switch profile settings.
+
+Simulate a social graph and extract most central users.
+
+Identify users who use the same caption for multiple posts.
+
+Write SQL to detect posts with highly polarizing reactions.
+
+Simulate feature adoption curve (story views, reels, etc.).
+
+Rank cities by engagement per capita (users / total city population).
+
+Write query for "top repliers" who respond to most comments.
+
+Identify content that triggered follow spikes.
+
+Simulate a daily content score using weighted interactions.
+
+Create funnel analysis: post viewed → liked → shared → followed.
+
+Track story reach and drop-off points (first view to last).
+
+Create snapshot report of entire platform at 9AM each day.
+
+Detect "serial likers" – users who like hundreds of posts/day.
+
+Identify patterns in users who never complete onboarding steps.
+
+Simulate login fatigue: users who log in but do nothing.
+
+Analyze engagement before and after a major feature release.
+
+Create user lifetime value estimate based on engagement.
+
+Build query to suggest user tags based on past mentions.
+
+Track number of repeated views of same post/story.
+
+Identify top cross-category posters (e.g., tech + food + fashion).
+
+Find hashtags that gained popularity after a specific post.
+
+Create interaction retention curve: how long do users keep engaging.
+
+Simulate interest profiles per user based on liked content.
+
+Write a ranking algorithm using SQL window functions.
+
+Identify shadow content: hidden but interacted (e.g., saved).
+
+Track engagement over 6 months for early adopters.
+
+Build a flexible report generator using stored procedures.
+
+Write query to backtrack every action leading to a follow.
+
+Simulate multivariate analysis on time vs topic vs device.
+
+Query to flag bursty users (10+ actions in 5 minutes).
+
+Create moderation analytics: speed, accuracy, repeat offenders.
+
+Design a performance score using custom business formula.
+
+Final challenge: Write a SQL to simulate entire user journey from signup → activity → follow → engagement → retention.
+
+✅ SQL Practice Questions 901–1000
+Write a query to find users whose posts went viral 3+ times in the last 6 months.
+
+Build a report that measures engagement decay after a post goes live.
+
+Simulate a trending algorithm: velocity of likes + shares + comments over 10-minute windows.
+
+Query for top 10% of users by engagement in the last 30 days.
+
+Detect delayed engagement: posts with most likes after 24 hours.
+
+Simulate a scoring algorithm for users combining posting, liking, and commenting patterns.
+
+Calculate user churn rate by cohort week.
+
+Write SQL to simulate A/B testing on post layout impact on likes.
+
+Identify posts with inconsistent interaction patterns (e.g., same IP, same timestamp).
+
+Create a full engagement funnel: impression → view → like → share → follow.
+
+Build a 7-day rolling retention report.
+
+Create a view that tags each user’s post as evergreen or short-lived based on engagement span.
+
+Query to simulate promotion campaign ROI via referral actions.
+
+Identify “super fans” – users who like and comment on every post from a creator.
+
+Write SQL to rank influencers by growth trend over multiple time slices.
+
+Build a view summarizing weekly post performance segmented by region.
+
+Simulate push notification success: impressions → opens → actions.
+
+Detect users with sudden follower spikes (possibly fake).
+
+Analyze follow-to-like conversion rate across campaigns.
+
+Find the longest period of inactivity for every user.
+
+Calculate cumulative post interactions per user month-wise.
+
+Create a leaderboard of followers gained during live events.
+
+Track hashtag popularity from zero to viral.
+
+Detect repeated sharing of identical content from different accounts.
+
+Write a query to backtrack the most common user journey path (signup → follow → like → post).
+
+Build an hourly breakdown of DAU (Daily Active Users).
+
+Identify weekend-only active users.
+
+Rank all content creators by average engagement adjusted for follower count.
+
+Simulate algorithm that predicts most likely next interaction for each user.
+
+Identify content creators who often lose followers after posting.
+
+Query for performance of each hashtag in combination with others.
+
+Write a recursive query to group hashtags into co-usage clusters.
+
+Track user onboarding step completion over time.
+
+Identify user pairs who never engage with each other despite following.
+
+Write a time-partitioned summary of post performance across years.
+
+Simulate business KPI: cost per engagement using ad spend + interactions.
+
+Detect algorithmic bias: top users shown repeatedly in suggested posts.
+
+Track percentage of comments made on sponsored posts vs organic.
+
+Create normalized engagement score per user across all activities.
+
+Write SQL to segment users into behavioral groups (lurker, poster, engager).
+
+Calculate correlation between post length and interaction type.
+
+Simulate social proof: how engagement increases likelihood of further engagement.
+
+Build time-to-respond report: how long before first comment.
+
+Find overlapping users in multiple cohorts (marketing campaign analysis).
+
+Write a trend projection query using last 4 weeks of engagement.
+
+Simulate user burnout: drop in content quality and frequency.
+
+Compare engagement per post vs user activity level.
+
+Track content overlap across trending posts (by keyword, hashtag, user).
+
+Measure notification fatigue by dismiss-to-click ratio.
+
+Generate a post-level view of ROI on paid boosts.
+
+Write a query to simulate a content virality chain (likes from friends of friends).
+
+Identify users with rising engagement despite low posting.
+
+Analyze moderator effectiveness: resolved flags per hour.
+
+Simulate community health report: reports, bans, reactivation trends.
+
+Detect suspiciously similar behavior patterns between users.
+
+Estimate real reach vs reported views using correlation techniques.
+
+Write a content freshness score: age vs current engagement.
+
+Identify dead hashtags: no usage + zero engagement in last 30 days.
+
+Create a dynamic user heatmap (hourly × daily × engagement).
+
+Compare retention of users from different signup channels.
+
+Simulate newsfeed algorithm: prioritization using recency + affinity + popularity.
+
+Calculate cost per daily active user using infra + ad data.
+
+Track referral conversion funnel per source.
+
+Rank regions by time to viral post.
+
+Identify post types that lead to most unfollows.
+
+Measure interaction consistency per user.
+
+Simulate alert system for engagement drops across platform.
+
+Create dashboard view for executive summary (DAU, retention, growth, complaints).
+
+Use SQL to detect revenge liking or engagement wars.
+
+Find users with 100% comment response rate.
+
+Create a post heat map based on user mood tagging.
+
+Calculate average repost lifespan.
+
+Simulate new feature adoption curves segmented by city.
+
+Detect influencer fatigue: low engagement despite posting.
+
+Create a time-series model on top of SQL data (step-by-step output).
+
+Build report to compare engagement before/after content rule changes.
+
+Simulate hashtag lifecycle (birth → peak → fade).
+
+Identify top discovery sources per user.
+
+Find most used hashtags that result in no engagement.
+
+Simulate burst detection in engagement (sudden spikes).
+
+Estimate max potential reach of a post based on network graph.
+
+Identify fake clusters of mutual followers.
+
+Calculate real influence score beyond follower count.
+
+Simulate multi-stage funnel with branching (e.g., signup → post or follow).
+
+Write complex query involving nested CTEs and window functions.
+
+Analyze dropout points in onboarding flow.
+
+Rank hashtags that correlate with higher user retention.
+
+Simulate elastic feed ranking based on multiple signals.
+
+Write query to auto-summarize user behavior daily.
+
+Create a derived metric for "post health" over time.
+
+Detect silent watchers (users who view often but never interact).
+
+Simulate a fraud detection engine using only SQL logic.
+
+Create logic for AB test auto-shutdown if threshold reached.
+
+Simulate post performance under different algorithm scenarios.
+
+Detect social echo chambers using shared engagement patterns.
+
+Write SQL that performs time-based pivot reports.
+
+Simulate referral chain scoring (depth + conversion).
+
+Identify trending patterns before they peak.
+
+Final Case: Track a complete platform-level KPI set in a single report.
+
+Final Challenge: Create a flexible, modular SQL report framework that runs daily, supports filtering by geography, and includes retention, churn, DAU, and interaction KPIs.
+
+
+
+
+
+
+
+
+
+
