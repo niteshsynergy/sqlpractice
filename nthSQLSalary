@@ -1,0 +1,32 @@
+Nth Highest salary
+
+-- nth highets salry -> 3rd or 4th
+select distinct salary from emp e1
+where (
+select count(distinct salary) from emp e2
+where e2.salary>e1.salary)=3-1;
+
+select distinct salary from emp e1
+-> 
+e1 []  -> ['85000.00','65000.00','92000.00','58000.00','70000.00'
+'78000.00','61000.00']
+Set<Integer> result = new HashSet<>(); // fial result
+for ( Integer sal1: e1){
+	if (result.contains(sal1)) 
+		continue;
+	Set<Integer> greaterSalaries = new HashSet<>();
+
+	for ( Integer sal2: e1){
+	
+		if( sal1>sal2){
+		 greaterSalaries.add(sal2); // Only distinct greater 
+		 }
+	}
+	 if (greaterSalaries.size() == 3 - 1) {
+                result.add(sal1); // This is the 3rd highest salary
+            }
+	
+}
+		 
+
+
