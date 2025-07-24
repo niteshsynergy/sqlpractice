@@ -40,4 +40,11 @@ where ( select count(distinct salary) from emp e2
 where e2.salary>e1.salary)=N-1;
 		 
 
+-- 3rd highets salry
+select distinct salary from emp
+order by salary desc
+limit 1 offset 2;
 
+select distinct salary from emp e1
+where ( select count(distinct salary) from emp e2
+where e2.salary>e1.salary)=N-1;
