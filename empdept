@@ -17,3 +17,22 @@ CREATE TABLE emp (
         ON DELETE RESTRICT
         ON UPDATE CASCADE
 );
+
+SELECT DISTINCT salary
+FROM niteshsynergy.employee
+ORDER BY salary DESC
+LIMIT 1 OFFSET 3;
+
+Overall Worst-case Time Complexity:O(N log N)
+unless indexed — then could improve to O(M)
+
+SELECT DISTINCT salary
+FROM emp e1
+WHERE (
+  SELECT COUNT(DISTINCT salary)
+  FROM emp e2
+  WHERE e2.salary > e1.salary
+) = 3 - 1;
+Worst-case time complexity:
+
+O(M^2) or O(M * log M)
